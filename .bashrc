@@ -8,7 +8,7 @@ PS1="\[$(tput bold)\]\[$(tput setaf 1)\]\u\[$(tput setaf 7)\]@\[$(tput setaf 4)\
 export HISTSIZE= HISTFILESIZE=
 export EDITOR="vim" VISUAL="vim"
 export BROWSER="thorium"
-export PATH="$PATH:~/.path/thorium:~/.path/codium/bin"
+export PATH="$PATH:$HOME/.path/thorium:$HOME/.path/codium/bin"
 
 # Colored man pages
 export LESS_TERMCAP_mb=$'\E[1;31m'
