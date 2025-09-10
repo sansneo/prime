@@ -1,0 +1,107 @@
+set autoread 
+set backspace=indent,eol,start 
+set clipboard=unnamedplus 
+set encoding=utf-8 
+set expandtab smarttab tabstop=4 shiftwidth=4
+set guicursor=n-v-c-i:block 
+set ignorecase hlsearch incsearch
+set nobackup nowritebackup noswapfile 
+set noerrorbells novisualbell 
+set number scrolloff=10
+set splitbelow splitright 
+filetype plugin indent on
+
+" Undo
+set undodir=~/.undo 
+let undo_dir = '~/.undo' 
+if !isdirectory(undo_dir) 
+    call mkdir(expand(undo_dir), 'p') 
+endif 
+set undofile
+
+" Make <C-c> act like <Esc>
+inoremap <C-c> <Esc>
+
+" Repeating commands in visual mode
+vnoremap . :normal .<CR>
+
+" Clear selections
+nnoremap <C-l> :nohlsearch<CR>
+
+" Behave like V$ and C$
+nnoremap Y y$
+
+" Command mode navigation
+cnoremap <C-a> <Home>
+cnoremap <C-e> <End>
+cnoremap <C-d> <Del>
+
+" Really fucking saving
+cnoremap <C-s> w !sudo tee % >/dev/null
+
+" Behave like tmux
+nnoremap <C-w>c :enew<CR>
+nnoremap <C-w>x :close<CR>
+
+" Netrw
+let g:netrw_banner = 0 
+let g:netrw_keepdir = 0 
+let g:netrw_browser_split = 4
+let g:netrw_liststyle = 3
+let g:netrw_winsize = 20
+nnoremap <C-e> :Lex<CR>
+
+" Plugins
+let data_dir = '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin()
+Plug 'airblade/vim-matchquote'
+Plug 'wellle/targets.vim'
+Plug 'machakann/vim-sandwich'
+Plug 'tpope/vim-commentary'
+Plug 'vimwiki/vimwiki'
+Plug 'sainnhe/gruvbox-material'
+Plug 'embark-theme/vim'
+Plug 'sainnhe/everforest'
+Plug 'tomasiser/vim-code-dark'
+call plug#end()
+let g:sandwich#recipes = deepcopy(g:sandwich#default_recipes)
+
+" Wiki
+nnoremap <C-w>i :VimwikiIndex<CR>
+nnoremap <C-w>I :VimwikiIndex<CR>
+nnoremap <C-w><C-i> :VimwikiIndex<CR>
+
+" Colorscheme
+syntax on
+set termguicolors
+set background=dark
+colorscheme gruvbox-material
+hi Normal guibg=NONE ctermbg=NONE
+
+" Colored Vimwiki headers
+augroup VimwikiHeaders
+  autocmd!
+  autocmd ColorScheme * hi VimwikiHeader1 guifg=#ea6962 gui=bold cterm=bold
+  autocmd ColorScheme * hi VimwikiHeader2 guifg=#7daea3 gui=bold cterm=bold
+  autocmd ColorScheme * hi VimwikiHeader3 guifg=#d3869b gui=bold cterm=bold
+  autocmd ColorScheme * hi VimwikiHeader4 guifg=#89b482 gui=bold cterm=bold
+  autocmd ColorScheme * hi VimwikiHeader5 guifg=#e78a4e gui=bold cterm=bold
+  autocmd ColorScheme * hi VimwikiHeader6 guifg=#ffffff gui=bold cterm=bold
+augroup END
+
+" Colored Markdown headers
+augroup MarkdownHeaders
+  autocmd!
+  autocmd ColorScheme * hi markdownH1 guifg=#ea6962 gui=bold cterm=bold
+  autocmd ColorScheme * hi markdownH1 guifg=#ea6962 gui=bold cterm=bold
+  autocmd ColorScheme * hi markdownH2 guifg=#7daea3 gui=bold cterm=bold
+  autocmd ColorScheme * hi markdownH3 guifg=#d3869b gui=bold cterm=bold
+  autocmd ColorScheme * hi markdownH4 guifg=#89b482 gui=bold cterm=bold
+  autocmd ColorScheme * hi markdownH5 guifg=#e78a4e gui=bold cterm=bold
+  autocmd ColorScheme * hi markdownH6 guifg=#ffffff gui=bold cterm=bold
+augroup END

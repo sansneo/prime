@@ -1,0 +1,9 @@
+/.DS_Store/
+/.env*
+/.idea/
+/.vscode/
+/README.md
+/extensions.txt
+/installer.sh
+/tags*
+/ublock.txt
