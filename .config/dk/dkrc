@@ -41,10 +41,16 @@ logfile="$HOME/.dklog"
 	# window rules
   dkcmd rule class="^Alacritty$" ws=1 focus=true
   dkcmd rule class="^Codium$" ws=2 focus=true
-  dkcmd rule class="^Thorium-browser$" ws=3 focus=true
+  dkcmd rule class="^thorium-browser$" ws=3 focus=true
   dkcmd rule class="^Zathura$" ws=4 focus=true
 
 	# apply current rules
 	dkcmd rule apply '*'
 
 } >> "$logfile" 2>&1
+
+# Startup
+alacritty &
+codium &
+thorium &
+zathura &

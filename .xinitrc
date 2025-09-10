@@ -15,12 +15,6 @@
 # audio
 pulseaudio &
 
-# startup
-alacritty &
-codium &
-thorium &
-zathura &
-
 # wm
 sxhkd &
 exec dbus-run-session dk
