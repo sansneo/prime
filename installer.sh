@@ -11,8 +11,11 @@ sudo xbps-install -Syu stow \
   tmux skim \
   dk sxhkd \
   dmenu scrot \
-  vim-x11 vscode \
-  zathura zathura-pdf-mupdf zathura-cb
+  vim-x11 \
+  zathura zathura-pdf-mupdf zathura-cb \
+  nsxiv xwallpaper \
+  mpv obs obs-plugin-browser-bin v4l2loopback \
+  qbittorrent pavucontrol blueman
 
 ## Installing Thorium
 wget -O thorium.zip $(curl -sL https://api.github.com/repos/Alex313031/thorium/releases/latest | \

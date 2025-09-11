@@ -51,6 +51,6 @@ logfile="$HOME/.dklog"
 
 # Startup
 alacritty &
-codium &
-thorium &
+~/.path/codium/bin/codium &
+~/.path/thorium/thorium &
 zathura &

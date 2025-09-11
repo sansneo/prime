@@ -32,6 +32,7 @@ alias code="codium"
 
 # Bindings
 bind "'\C-x': edit-and-execute-command"
+set -o vi
 
 # Tmux
 [[ $DISPLAY && -z $TMUX && -z $VSCODE_INJECTION ]] && exec tmux new -As main
