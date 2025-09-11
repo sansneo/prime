@@ -3,6 +3,7 @@ set backspace=indent,eol,start
 set clipboard=unnamedplus 
 set encoding=utf-8 
 set expandtab smarttab tabstop=4 shiftwidth=4
+set formatoptions-=ro
 set guicursor=n-v-c-i:block 
 set ignorecase hlsearch incsearch
 set nobackup nowritebackup noswapfile 
