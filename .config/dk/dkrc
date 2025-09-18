@@ -15,8 +15,8 @@ logfile="$HOME/.dklog"
   # workspaces names
 	dkcmd set \
 		ws=1  name="alacritty" \
-		ws=2  name="vscode" \
-		ws=3  name="chromium" \
+		ws=2  name="codium" \
+		ws=3  name="thorium" \
 		ws=4  name="zathura" \
 		 
 	# minimum width/height for resizing, and minimum allowed on-screen when moving

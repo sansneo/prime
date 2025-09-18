@@ -9,7 +9,7 @@ $HOME_DIR/git"
 if [ $# -eq 1 ]; then
     selected="$1"
 else
-    selected=$(fd --type=dir --max-depth=1 --absolute-path . $HOME_DIR $HOME_DIR/git \
+    selected=$(fd --type=dir --max-depth=1 --absolute-path . $DIRS \
         | sed -e "s|$HOME_DIR/||" -e 's|/$||' \
         | sk --margin 10% --color="bw")
 fi

@@ -1,4 +1,4 @@
-#!/bin/sh
+# !/bin/sh
 
 # Directories
 mkdir ~/git # Repositories
@@ -8,7 +8,7 @@ mkdir ~/.path # Included in $PATH
 ## Installing packages
 sudo xbps-install -Syu stow \
   alacritty \
-  tmux skim \
+  tmux fd ripgrep q skim \
   dk sxhkd \
   dmenu scrot \
   vim-x11 \
