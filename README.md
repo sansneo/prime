@@ -40,13 +40,19 @@ sh installer.sh arch/void/alpine
 2. Go over installed dotfiles and tweak them
 
 > [!TIP]
-> For the VSCode config you need the GitHub Themes and Vim extension installed
+> For the VSCode config you need the GitHub Themes and Vim extension installed  
 > It's highly recommended to use uBlock Origin and a password manager like Bitwarden in Firefox
 
-3. Done 🎉
+3. Done 🎉  
+
 For more, check out my personal [dotfiles](https://github.com/sansneo/dotfiles)!
 
 ## Keybindings
+
+> [!WARNING]
+> Bash has vi mode enabled.
+> It can be unfamiliar to someone who has never used it!
+
 Everything noteworthy.  
 | Component | Keybinding | Action |
 |-----------|------------|--------|
@@ -91,10 +97,6 @@ Everything noteworthy.
 | vscode | `ctrl+e shift+n` | new folder |
 | vscode | `ctrl+e r` | rename file |
 | vscode | `ctrl+e d` | delete file |
-
-> [!WARNING]
-> Bash has vi mode enabled.
-> It can be unfamiliar to someone who has never used it!
 
 ## Contributions
 Please open a pull request for minor spelling mistakes or if you find incoherence in the system!
