@@ -38,7 +38,7 @@ logfile="$HOME/.dklog"
 		outer_urgent='#222222'
 
 	# window rules
-  dkcmd rule class="^Alacritty$" ws=1 focus=true
+  dkcmd rule class="^alacritty$" ws=1 focus=true
   dkcmd rule class="^firefox$" ws=2 focus=true
   dkcmd rule class="^code - oss$" ws=3 focus=true
   

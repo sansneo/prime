@@ -7,7 +7,7 @@ general.import = [
 padding               = { x = 2, y = 2 }
 opacity               = 1.0
 blur                  = false
-class                 = { instance = "Alacritty", general = "Alacritty" }
+class                 = { instance = "alacritty", general = "alacritty" }
 
 [font]
 normal                = { family = "Commit Mono", style = "Bold" }
