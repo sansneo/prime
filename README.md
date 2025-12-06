@@ -25,7 +25,7 @@ There are three builds available based off the latest Void Linux x86_64-glibc.
 * Performance (`performance-xorg-prime.iso`), exactly like safe, but with unsecure kernel boot options for a performance increase up to 20%!
 
 > [!CAUTION]
-> Using performance will let your system vulnerable to Meltdown and a lot more, but unless there's someone else on your system that's doing binary exploitation or process hacking, you are probably good.
+> Using performance your system will be vulnerable to Meltdown and a lot more, but unless there's someone else on your computer that's doing binary exploitation or process hacking, you are probably good.
 
 Let's get into it!
 
@@ -186,7 +186,7 @@ Check out my super curated [bookmarks](./bookmarks.html)!
 Don't use fucking AI[^5] whenever you can't understand something.
 
 ## Screenshots
-![Concept](./design/light.png)
+![Concept](./xorg/etc/skel/image/light.png)
 ![Split](./design/split.png)
 ![VSCode](./design/vscode.png)
 
