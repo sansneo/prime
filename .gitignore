@@ -1,0 +1,27 @@
+# Builds
+*.dll
+*.exe
+*.o
+*.out
+*.so
+*.test
+*.iso
+/build
+
+# Databases
+*.db
+*.sqlite
+
+# Logs
+*.log
+
+# Environment
+.env*
+!.env.example
+
+# Tools
+.vscode/
+.idea/
+.DS_Store
+*.swp
+tags*

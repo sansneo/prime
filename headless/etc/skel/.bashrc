@@ -1,0 +1,1 @@
+alias ez="vim -y" im="vim" iv="vim"

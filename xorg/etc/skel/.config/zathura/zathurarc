@@ -1,0 +1,17 @@
+# Open documents in fit-width mode by default
+set adjust-open "best-fit"
+
+# Do not show recently opened files
+set show-recent 0
+
+# One page per row by default
+set pages-per-row 1
+
+# Stop at page boundries
+set scroll-page-aware "true"
+set smooth-scroll "true"
+set scroll-full-overlap 0.01
+set scroll-step 100
+
+# Use the system clipboard
+set selection-clipboard "clipboard"
