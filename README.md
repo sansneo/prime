@@ -133,7 +133,6 @@ Let's get into it!
 * vscode: graphical editor
 * qutebrowser: web browser
 * wireshark: analyze network packets
-* dolphin: file manager
 * cutter: frontend for rizin
 * flatpak: self-contain applications
   * obs: record screen and live stream
@@ -223,8 +222,7 @@ xbps-install -Syu nvidia nvidia-vaapi-driver nvidia-docker
 xbps-install -Syu intel-video-accel intel-media-driver vulkan-intel
 ```
 
-## Git
-You might wanna add your `.gitconfig`!
+You might also want to place your `.gitconfig`!
 ```ini
 [user]
   email = sansneolink@gmail.com

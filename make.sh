@@ -129,9 +129,9 @@ zathura-cb
 zathura-pdf-mupdf
 vscode
 qutebrowser
+python3-adblock
 cutter
 wireshark
-dolphin
 flatpak
 "
 apps=$(clean "$apps")
