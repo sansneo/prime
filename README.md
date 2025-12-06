@@ -118,7 +118,7 @@ Let's get into it!
   * xclip: clipboard
   * xprop: display window properties
   * xset: change display server properties
-* noto (including cjk and emojis), jetbrains mono and mononoki: fonts
+* noto (including cjk and emojis), jetbrains and mononoki: fonts
 * dk: window manager
 * sxhkd: hotkey daemon
 * dmenu: launcher
@@ -190,8 +190,12 @@ Don't use fucking AI[^5] whenever you can't understand something.
 ![Split](./design/split.png)
 ![VSCode](./design/vscode.png)
 
+Is it supposed to look pretty?   
+That's not the point, but I'm happy it does!
+
 ## Installation
-Boot it up and run `sudo void-installer`, follow the process and done 🎉!
+Boot it up and run `sudo void-installer`, follow the process and done 🎉!  
+You know how to partition and where to mount stuff, you are a big boy/girl.
 
 > [!TIP]
 > Make sure to pick the right services and groups.
