@@ -1,4 +1,4 @@
-# Do not load autoconfig
+# Do not load the autoconfig
 config.load_autoconfig(False)
 
 # Fonts
