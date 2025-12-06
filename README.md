@@ -125,6 +125,7 @@ Let's get into it!
 * scrot: screenshot
 * xautolock and sclok: lock screen
 * xwallpaper: set wallpaper
+* ranger: file manager
 * nsxiv: view images
 * ffmpeg: process and play audios and videos
 * zathura (supporting pdf, epub, xps, cbz, cbr, cb7 and cbt): read documents

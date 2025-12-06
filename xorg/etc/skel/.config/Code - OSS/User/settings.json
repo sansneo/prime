@@ -14,9 +14,9 @@
 	"workbench.activityBar.location": "hidden",
 	"workbench.enableExperiments": false,
 	"workbench.colorTheme": "GitHub Dark Default",
+	"window.titleBarStyle": "native",
 	"window.customTitleBarVisibility": "never",
 	"window.menuBarVisibility": "hidden",
-	"window.titleBarStyle": "native",
 	// explorer
 	"explorer.compactFolders": false,
 	"explorer.confirmDelete": false,
