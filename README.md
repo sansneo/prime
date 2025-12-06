@@ -25,7 +25,7 @@ There are three builds available based off the latest Void Linux x86_64-glibc.
 * Performance (`performance-xorg-prime.iso`), exactly like safe, but with unsecure kernel boot options for a performance increase up to 20%!
 
 > [!CAUTION]
-> Using performance will let your system vulnerable to Meltdown and a lot more, but unless there's someone else on your system that's doing binary exploitation or process hacking, you are probably good.
+> Using performance your system will be vulnerable to Meltdown and a lot more, but unless there's someone else on your computer doing binary exploitation or process hacking, you are probably good.
 
 Let's get into it!
 
@@ -178,15 +178,15 @@ Let's get into it!
 
 Check out my super curated [bookmarks](./bookmarks.html)!
 
-> [!NOTE]
-> Whenever offline:  
+> [!TIP]
+> Offline?
 > Use `man` to access manual pages.  
 > Use `info` to access GNU documentation system.
 
 Don't use fucking AI[^5] whenever you can't understand something.
 
 ## Screenshots
-![Concept](./design/light.png)
+![Concept](./xorg/etc/skel/image/light.png)
 ![Split](./design/split.png)
 ![VSCode](./design/vscode.png)
 
@@ -203,7 +203,8 @@ You know how to partition and where to mount stuff, you are a big boy/girl.
 Now log into your new system and get the remaining drivers.
 
 > [!NOTE]
-> Some of these might already be installed, better safe than sorry!
+> Some of these might already be installed.  
+> Better safe than sorry!
 
 CPU microcode
 ```sh
@@ -260,7 +261,7 @@ sudo flatpak install org.nicotine_plus.Nicotine
 * Signal
 ```sh
 sudo flatpak install org.signal.Signal
-sudo flatpak override org.signal.Signal --filesystem=~/downloads
+sudo flatpak override org.signal.Signal --filesystem=~/download
 ```
 * Rustdesk
 ```sh
@@ -269,8 +270,8 @@ sudo flatpak install com.rustdesk.RustDesk
 * Heroic
 ```sh
 sudo flatpak install com.heroicgameslauncher.hgl
-sudo flatpak override --filesystem=~/games com.heroicgameslauncher.hgl
 sudo flatpak override --nofilesystem=~/Games/Heroic com.heroicgameslauncher.hgl
+sudo flatpak override --filesystem=~/games com.heroicgameslauncher.hgl
 ```
 * mGBA
 ```sh
@@ -309,15 +310,17 @@ sh make.sh
 ```
 
 It's gonna take a while, you'll find the resulting iso files in `build/`.  
-To learn more take a look at `make.sh` and refer to [void-linux/void-mklive](https://github.com/void-linux/void-mklive).
+You'll find the resulting iso files in `build/`.
+To learn more, take a look at `make.sh` and refer to [void-linux/void-mklive](https://github.com/void-linux/void-mklive).
 
 ### Conclusion
 I love my computer! Do you?   
-Get the fuck out of IT if you are here [for the money](https://geohot.github.io/blog/jekyll/update/2025/09/13/get-out-of-technology.html).  
-Now, because of the [state of the world](https://www.slickcharts.com/sp500) there are a lot of money to be made if you actually care about doing something and providing value to the world by making computers better.
-Personally, I want to do everything systems programming, secure backend and the cloud; with this last one known to be highly remunerative.   
-As time passes I look up to legends such Rob Pike, Russ Cox and George Hotz more and more.   
-Currently I'm 22 years old, in my 30s I will have a pretty good understanding of my toolset and in my 40s I hope I'll be able to compare to them.
+
+Please, get the fuck out of IT if you are here [for the money](https://geohot.github.io/blog/jekyll/update/2025/09/13/get-out-of-technology.html).  
+Because of the [state of the world](https://www.slickcharts.com/sp500) there's a lot of money to be made here if you actually care about doing something real and creating value by making infrastructures and computers better.  
+Personally, I really enjoy everything systems programming, secure backend development and the cloud (this last one is known to be extremely remunerative), so I'll be doing that.  
+As time passes I look up to legends such Rob Pike, Russ Cox and George Hotz more and more.  
+I am 22 years old at the time of writing this, in my 30s I'll have a pretty good understanding of my toolset and computers in general, then hopefully, in my 40s I'll be able to compare to them.
 
 Thanks to computers I have the knowledge.  
 Thanks to luck I have the genetics.   
