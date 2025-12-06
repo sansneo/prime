@@ -19,14 +19,13 @@ I need a system that:
 Is that you[^4]? Great! Then read the rest.
 
 ## Builds
-There are three builds available, all built on top of the latest Void Linux x86_64-glibc.
-* Headless (`headless-prime.iso`), the toolset, plus the drivers and nothing else.
-* Safe (`safe-xorg-prime.iso`), everything in headless, plus audio, bluetooth, fonts, everything graphics and various applications.
-* Performance (`performance-xorg-prime.iso`), exactly like the previous, but with unsecure kernel boot options for a performance increase up to 20%!
+There are three builds available based off the latest Void Linux x86_64-glibc.
+* Headless (`headless-prime.iso`), the toolset plus the drivers, nothing else.
+* Safe (`safe-xorg-prime.iso`), everything headless has plus audio, bluetooth, fonts, everything graphics and various applications.
+* Performance (`performance-xorg-prime.iso`), exactly like safe, but with unsecure kernel boot options for a performance increase up to 20%!
 
-> [!DANGER]
-> Using performance will let your system vulnerable to Meltdown and a lot more...  
-> Unless there's someone else doing binary exploitation and process hacking on your system, you are probably good.
+> [!CAUTION]
+> Using performance will let your system vulnerable to Meltdown and a lot more, but unless there's someone else on your system that's doing binary exploitation or process hacking, you are probably good.
 
 Let's get into it!
 
@@ -286,7 +285,7 @@ sudo flatpak install io.github.ryubing.Ryujinx
 ## Building
 
 > [!WARNING]
-> This should be done in a Void Linux installation with `qemu-user-static` installed.
+> It's recommended to do this on a Void Linux installation with `qemu-user-static`.
 
 1. Clone the repo
 ```
@@ -313,13 +312,15 @@ To learn more take a look at `make.sh` and refer to [void-linux/void-mklive](htt
 I love my computer! Do you?   
 Get the fuck out of IT if you are here [for the money](https://geohot.github.io/blog/jekyll/update/2025/09/13/get-out-of-technology.html).  
 Now, because of the [state of the world](https://www.slickcharts.com/sp500) there are a lot of money to be made if you actually care about doing something and providing value to the world by making computers better.
-Personally, I am into everything systems programming, secure backend and the cloud; with this last one known to be the most remunerative. 
+Personally, I want to do everything systems programming, secure backend and the cloud; with this last one known to be highly remunerative.   
 As time passes I look up to legends such Rob Pike, Russ Cox and George Hotz more and more.   
-Currently I am 22 years old, in my 30s I will have a pretty good understanding of my toolset and in my 40s I hope I'll be able to compare to them.
+Currently I'm 22 years old, in my 30s I will have a pretty good understanding of my toolset and in my 40s I hope I'll be able to compare to them.
 
-Thanks to computers I have the knowledge and thanks to luck I have the genetics.
+Thanks to computers I have the knowledge.  
+Thanks to luck I have the genetics.   
+What's stopping me?  
 
-Life can be beautiful (even if it can definitely feel dark at times), self-improvement is the best and my drive will never cease.  
+Life can be beautiful (even if it can definitely feel dark at times), self-improvement is the best and my drive will never stop.  
 I believe in you, dear reader. We won't stand for mediocrity.
 
 # Footnotes
@@ -328,8 +329,7 @@ I believe in you, dear reader. We won't stand for mediocrity.
 [^2]: This is the true enemy we face as developers, we need to reduce overhead and that mental fatigue that slowly builds while we work!
   Here's a video from [The Primeagen](https://www.youtube.com/watch?v=ZH3iKbEiks0) I really liked which touches on the topic.
 
-[^3]: The performance build is not trying to be crazy secure, the safe build has the Void Linux kernel hardening, if you use a modern CPU on a non-core/libre (meaning modern basically) system, if you are holding a non-rooted phone with Google services running on it (meaning you are a normal person), if you often use something like Discord (eww) or play video-games like Valorant (maybe try something single-player or fun with friends) or Rainbow Six Siege that have a kernel-level anti-cheat running, your super secure private hacker ideological setup starts to look cringey.
-  This system is secure and practical in all the right ways in my opinion.
+[^3]: The performance build is not trying to be crazy secure, the safe build has the Void Linux kernel hardening, if you use a modern CPU on a non-core/libre (meaning modern basically) system, if you are holding a non-rooted phone with Google services running on it (meaning you are a normal person), if you often use something like Discord (eww) or play video-games like Valorant (maybe try something single-player or fun with friends) or Rainbow Six Siege that have a kernel-level anti-cheat running, your super secure private hacker ideological setup starts to look cringey. This system is secure and practical in all the right ways in my opinion.
 
 [^4]: You can't use prime unless you bench at least 60kg and are really hot.
 
