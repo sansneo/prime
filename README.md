@@ -176,7 +176,7 @@ Let's get into it!
 * [Cutter](https://cutter.re)
 * [Heroic](https://heroicgameslauncher.com)
 
-Check out my super curated [bookmarks](./bookmarks.html)!
+Explore the highly curated [quickmarks](xorg/etc/skel/.config/qutebrowser/quickmarks)!
 
 > [!TIP]
 > Offline?
@@ -194,13 +194,13 @@ Is it supposed to look pretty?
 That's not the point, but I'm happy it does!
 
 ## Installation
-Boot it up and run `sudo void-installer`, follow the process and done 🎉!  
+1. Boot it up and run `sudo void-installer`, follow the process and done 🎉!  
 You know how to partition and where to mount stuff, you are a big boy/girl.
 
 > [!TIP]
 > Make sure to pick the right services and groups.
 
-Now log into your new system and get the remaining drivers.
+2. Now log into your new system and get the remaining drivers.
 
 > [!NOTE]
 > Some of these might already be installed.  
@@ -221,8 +221,10 @@ xbps-install -Syu mesa-vulkan-radeon xf86-video-amdgpu xf86-video-ati
 # For Nvidia GPUs
 xbps-install -Syu nvidia nvidia-vaapi-driver nvidia-docker
 # For Intel GPUs
-xbps-install -Syu intel-video-accel intel-media-driver vulkan-intel
+xbps-install -Syu intel-video-accel intel-media-driver
 ```
+
+3. Make sure your `.xinitrc` is just the way you want it!
 
 You might also want to place your `.gitconfig`!
 ```ini
@@ -250,7 +252,7 @@ Install the flatpaks.
 ```sh
 sudo flatpak install com.obsproject.Studio
 ```
-* Qbittorrent
+* qBittorrent
 ```sh
 sudo flatpak install org.qbittorrent.qBittorrent
 ```
@@ -263,7 +265,7 @@ sudo flatpak install org.nicotine_plus.Nicotine
 sudo flatpak install org.signal.Signal
 sudo flatpak override org.signal.Signal --filesystem=~/download
 ```
-* Rustdesk
+* RustDesk
 ```sh
 sudo flatpak install com.rustdesk.RustDesk
 ```
@@ -275,7 +277,7 @@ sudo flatpak override --filesystem=~/games com.heroicgameslauncher.hgl
 ```
 * mGBA
 ```sh
-sudo flatpak install net.kuribo64.melonDS
+sudo flatpak install io.mgba.mGBA
 ```
 * MelonDS
 ```sh
@@ -309,8 +311,8 @@ su
 sh make.sh
 ```
 
-It's gonna take a while, you'll find the resulting iso files in `build/`.  
-You'll find the resulting iso files in `build/`.
+It's going to take a while...
+You'll find the resulting files in `build/`.  
 To learn more, take a look at `make.sh` and refer to [void-linux/void-mklive](https://github.com/void-linux/void-mklive).
 
 ### Conclusion
