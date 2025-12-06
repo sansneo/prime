@@ -310,7 +310,7 @@ sh make.sh
 ```
 
 It's gonna take a while, you'll find the resulting iso files in `build/`.  
-You'll find the resulting iso files in `build/`.
+You'll find the resulting iso files in `build/`.  
 To learn more, take a look at `make.sh` and refer to [void-linux/void-mklive](https://github.com/void-linux/void-mklive).
 
 ### Conclusion
