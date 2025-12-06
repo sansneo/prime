@@ -6,7 +6,6 @@
 *.so
 *.test
 *.iso
-/build
 
 # Databases
 *.db
