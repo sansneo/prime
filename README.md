@@ -176,7 +176,7 @@ Let's get into it!
 * [Cutter](https://cutter.re)
 * [Heroic](https://heroicgameslauncher.com)
 
-Check out my super curated [bookmarks](./bookmarks.html)!
+Explore the highly curated [quickmarks](xorg/etc/skel/.config/qutebrowser/quickmarks)!
 
 > [!TIP]
 > Offline?
