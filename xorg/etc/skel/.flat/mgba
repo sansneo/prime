@@ -1,3 +1,3 @@
 #!/bin/sh
 
-flatpak run info.cemu.Cemu
+flatpak run io.mgba.mGBA

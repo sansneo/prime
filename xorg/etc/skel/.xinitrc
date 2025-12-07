@@ -7,8 +7,8 @@
 xset -dpms
 xset s off
 
-# Lock the screen after 10 minutes of inactivity
-xautolock -time 10 -locker slock &
+# Lock the screen after 20 minutes of inactivity
+xautolock -time 20 -locker slock &
 
 # Wallpaper
 xwallpaper --maximize ~/image/light.png
@@ -18,7 +18,7 @@ xwallpaper --maximize ~/image/light.png
 # setxkbmap -option caps:none # Disable CAPSLOCK
 
 # Mouse
-# xinput --set-prop "Name" "libinput Scrolling Pixel Distance" 10
+# xinput --set-prop "Name" "libinput Scrolling Pixel Distance" 5
 
 # Audio
 pipewire &
