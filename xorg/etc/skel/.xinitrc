@@ -8,13 +8,13 @@ xset -dpms
 xset s off
 
 # Lock the screen after 20 minutes of inactivity
-xautolock -time 20 -locker slock &
+# xautolock -time 20 -locker slock &
 
 # Wallpaper
 xwallpaper --maximize ~/image/light.png
 
 # Keyboard
-# setxkbmap us # Set X keyboard
+# setxkbmap us # Set Xorg keyboard language
 # setxkbmap -option caps:none # Disable CAPSLOCK
 
 # Mouse

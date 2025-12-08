@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Fix Google Web Search
+// @name         Hide Google Gemini
 // @namespace    http://tampermonkey.net/
 // @version      2024-05-26
 // @license      MIT

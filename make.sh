@@ -128,8 +128,14 @@ zathura
 zathura-cb
 zathura-pdf-mupdf
 vscode
+obs
+obs-plugin-browser-bin
+Signal-Desktop
 qutebrowser
 python3-adblock
+firefox
+qbittorrent
+nicotine+
 cutter
 wireshark
 flatpak

@@ -71,7 +71,6 @@ c.tabs.show = "always"
 c.tabs.mousewheel_switching = False
 # Bindings
 config.bind("tt", "config-cycle tabs.show always never")
-config.bind("tp", "open -p")
 
 # Prompt
 c.colors.prompts.border = "0px solid #000000"
