@@ -130,8 +130,14 @@ zathura-pdf-mupdf
 vscode
 qutebrowser
 python3-adblock
-cutter
+firefox
 wireshark
+Signal-Desktop
+qbittorrent
+nicotine+
+obs
+obs-plugin-browser-bin
+cutter
 flatpak
 "
 apps=$(clean "$apps")
@@ -168,6 +174,19 @@ cd void-mklive/
     -C "vconsole.keymap=us nowatchdog live.autologin live.shell=/bin/bash"
 
 # Performance
+./mkiso.sh -a x86_64 \
+    -r "https://repo-fastly.voidlinux.org/current" \
+    -r "https://repo-fastly.voidlinux.org/current/nonfree" \
+    -- -k "us" -T "Void Linux" -o ../build/performance-xorg-prime.iso \
+    -p "void-repo-nonfree" \
+    -p "$drivers $services $utilities $development" \
+    -p "$xorg $audio $bluetooth $fonts $apps" \
+    -e /bin/bash \
+    -I ../headless -I ../xorg -I ../perf \
+    -S "dhcpcd cronie tlp iwd bluetoothd dbus polkitd" \
+    -C "vconsole.keymap=us nowatchdog live.autologin live.shell=/bin/bash"
+
+# Bloated
 ./mkiso.sh -a x86_64 \
     -r "https://repo-fastly.voidlinux.org/current" \
     -r "https://repo-fastly.voidlinux.org/current/nonfree" \

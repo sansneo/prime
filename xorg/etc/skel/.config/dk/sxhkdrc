@@ -24,13 +24,13 @@ super + shift + space
 super {_,shift + ,ctrl + }{n,m,b}
 	dkcmd mon {view,send,follow} {prev,next,last}
 
-# view next workspace
-super + q
-	dkcmd ws next
-
 # view previous workspace
-super + e
+super + q
 	dkcmd ws prev
+
+# view next workspace
+super + e
+	dkcmd ws next
 
 # view workspace
 super + {_,shift + ,ctrl + }{w,a,s,d,u,i,o,p}

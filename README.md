@@ -134,11 +134,11 @@ Let's get into it!
 * vscode: graphical editor
 * qutebrowser: web browser
 * wireshark: analyze network packets
+* signal: chat and call
+* qbittorrent and nicotine: piracy
+* obs: record screen and live stream
 * cutter: frontend for rizin
 * flatpak: self-contain applications
-  * obs: record screen and live stream
-  * qbittorrent and nicotine: piracy
-  * signal: chat and call
   * rustdesk: remote desktop
   * heroic: play native and windows games with proton
   * mgba: play nintendo gba games by emulating them
@@ -242,29 +242,16 @@ You might also want to place your `.gitconfig`!
 	rebase = true
 ```
 
+Edit `/etc/dhcpcd.conf` to specify your preferred DNS servers (by default, Cloudflare’s DNS are used).  
+To prevent dhcpcd from overwriting your `/etc/resolv.conf`, uncomment `nohook resolv.conf`.  
+To use your gateway's default DNS server, comment `nooption domain_name_servers` and `nooption rdnss`.
+
 ## Flatpaks
 Add the Flathub remote.
 ```sh
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 ```
 Install the flatpaks.
-* OBS
-```sh
-sudo flatpak install com.obsproject.Studio
-```
-* qBittorrent
-```sh
-sudo flatpak install org.qbittorrent.qBittorrent
-```
-* Nicotine+
-```sh
-sudo flatpak install org.nicotine_plus.Nicotine
-```
-* Signal
-```sh
-sudo flatpak install org.signal.Signal
-sudo flatpak override org.signal.Signal --filesystem=~/download
-```
 * RustDesk
 ```sh
 sudo flatpak install com.rustdesk.RustDesk
