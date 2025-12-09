@@ -134,11 +134,11 @@ Let's get into it!
 * vscode: graphical editor
 * qutebrowser: web browser
 * wireshark: analyze network packets
+* signal: chat and call
+* qbittorrent and nicotine: piracy
+* obs: record screen and live stream
 * cutter: frontend for rizin
 * flatpak: self-contain applications
-  * obs: record screen and live stream
-  * qbittorrent and nicotine: piracy
-  * signal: chat and call
   * rustdesk: remote desktop
   * heroic: play native and windows games with proton
   * mgba: play nintendo gba games by emulating them

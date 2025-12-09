@@ -1,7 +1,7 @@
 # Monitor
-# xrandr --output HDMI-1 -s 1920x1080 -r 144 --primary
-# xrandr --output HDMI-1 --set TearFree on
-# xrandr --output eDP-1 --off
+# xrandr --output HDMI-A-0 -s 1920x1080 -r 144 --primary
+# xrandr --output HDMI-A-0 --set TearFree on
+# xrandr --output eDP --off
 
 # Let the monitor OCD settings handle screen turn off
 xset -dpms

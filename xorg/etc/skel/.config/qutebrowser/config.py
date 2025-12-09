@@ -106,11 +106,11 @@ c.url.default_page = "https://google.com"
 c.url.searchengines = {
     "DEFAULT": "https://www.google.com/search?q={}",
     "yt": "https://youtube.com/results?search_query={}",
-    "gh": "https://github.com/search?q={}",
-    "go": "https://pkg.go.dev/search?q={}",
-    "py": "https://pypi.org/search/?q={}",
-    "gl": "https://pkg.go.dev/search?q={}",
-    "wk": "https://en.wikipedia.org/wiki/{}",
     "nx": "https://next-episode.net/search?search={}",
+    "gh": "https://github.com/search?q={}",
     "to": "https://1337x.to/search/{}/1/",
+    "gopkg": "https://pkg.go.dev/search?q={}",
+    "pypkg": "https://pypi.org/search/?q={}",
+    "glpkg": "https://packages.gleam.run/?search={}",
+    "wiki": "https://en.wikipedia.org/wiki/{}",
 }
