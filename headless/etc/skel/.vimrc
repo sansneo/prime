@@ -41,8 +41,8 @@ set undofile undodir=~/.vim/undo
 nnoremap <C-c> <Esc>
 inoremap <C-c> <Esc>
 vnoremap <C-c> <Esc>
-cnoremap <silent> <C-a>	<Home>
-cnoremap <silent> <C-e> <End>
+cnoremap <C-a> <Home>
+cnoremap <C-e> <End>
 nnoremap <silent> <C-l> :nohl<CR>
 
 " Netrw
