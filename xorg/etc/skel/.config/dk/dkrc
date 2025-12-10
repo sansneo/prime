@@ -29,7 +29,7 @@ logfile="$HOME/.dklog"
 	dkcmd set obey_motif=true
 
 	# borders
-	dkcmd set border width=4 outer_width=0 colour \
+	dkcmd set border width=0 outer_width=0 colour \
 		focus='#4ad66d' \
 		unfocus='#ffffff' \
 		urgent='#ee5555' \
