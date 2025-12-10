@@ -70,6 +70,7 @@ Let's get into it!
 * traceroute: follow network packets
 * iproute2 and iputils: network utilities
 * wget: http and ftp download utility
+* yt-dlp: download videos
 * acpid: handle acpi events
 * eudev: device manager
 * ntp and chrony: time synchronization
@@ -107,8 +108,9 @@ Let's get into it!
 * git: version control system
 
 ### Xorg
+* acpid: power management
 * dbus: message bus system 
-* elogind: user logins, seats and power access
+* elogind: user logins and seats
 * polkit: policy framework
 * pipewire, wireplumber and wiremix: audio
 * bluez: bluetooth
@@ -133,14 +135,12 @@ Let's get into it!
 #### Apps
 * vscode: graphical editor
 * qutebrowser: web browser
-* wireshark: analyze network packets
-* signal: chat and call
-* qbittorrent and nicotine: piracy
-* obs: record screen and live stream
-* cutter: frontend for rizin
+* qbittorrent: torrent
+* obs: record and live stream
+* cutter: rizin frontend
 * flatpak: self-contain applications
   * rustdesk: remote desktop
-  * heroic: play native and windows games with proton
+  * heroic: play native and windows games using proton
   * mgba: play nintendo gba games by emulating them
   * melonds: play nintendo ds games by emulating them
   * ryujinx: play nintendo switch games by emulating them
@@ -172,11 +172,10 @@ Let's get into it!
 #### Additional
 * [VSCode](https://code.visualstudio.com/docs)
 * [Qutebrowser](https://qutebrowser.org/doc/help/index.html)
-* [Wireshark](https://www.wireshark.org/docs/wsug_html_chunked)
 * [Cutter](https://cutter.re)
 * [Heroic](https://heroicgameslauncher.com)
 
-Explore the highly curated [quickmarks](xorg/etc/skel/.config/qutebrowser/quickmarks)!
+Absolutely explore the highly curated [quickmarks](xorg/etc/skel/.config/qutebrowser/quickmarks)!
 
 > [!TIP]
 > Offline?
@@ -187,11 +186,18 @@ Don't use fucking AI[^5] whenever you can't understand something.
 
 ## Screenshots
 ![Concept](./xorg/etc/skel/image/light.png)
-![Split](./design/split.png)
+![Prompt](./design/prompt.png)
+![Vim](./design/vim.png)
 ![VSCode](./design/vscode.png)
 
 Is it supposed to look pretty?   
 That's not the point, but I'm happy it does!
+
+## Keybindings
+[TABLE.md](./TABLE.md).
+
+> [!TIP]
+> Modify `~/.apps` to choose which applications are listed in the filtered launcher.
 
 ## Installation
 1. Boot it up and run `sudo void-installer`, follow the process and done 🎉!  
@@ -275,6 +281,11 @@ sudo flatpak install net.kuribo64.melonDS
 sudo flatpak install io.github.ryubing.Ryujinx
 ```
 
+> [!TIP]
+> I recommend Signal to text and call with your friends.
+> It's better then the alternatives to me just because it feels private!
+> You can find it in the repositories as Signal-Desktop.
+
 ## Building
 
 > [!WARNING]
@@ -282,8 +293,8 @@ sudo flatpak install io.github.ryubing.Ryujinx
 
 1. Clone the repo
 ```
-git clone https://github.com/sansneo/iso
-cd iso
+git clone https://github.com/sansneo/prime
+cd prime
 ```
 2. Update the submodule
 ```
@@ -293,14 +304,14 @@ git submodule update --init --remote
 ```
 su
 ```
-4. Run `make.sh`
+4. Run `build.sh`
 ```
-sh make.sh
+sh build.sh
 ```
 
-It's going to take a while...
+It's going to take a while...  
 You'll find the resulting files in `build/`.  
-To learn more, take a look at `make.sh` and refer to [void-linux/void-mklive](https://github.com/void-linux/void-mklive).
+To learn more, take a look at `build.sh` and refer to [void-linux/void-mklive](https://github.com/void-linux/void-mklive).
 
 ### Conclusion
 I love my computer! Do you?   

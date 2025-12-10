@@ -14,18 +14,16 @@ logfile="$HOME/.dklog"
 
 	# workspaces names
 	dkcmd set \
-		ws=1 name="routione" \
-		ws=2 name="alacritty" \
+		ws=1 name="routine" \
+		ws=2 name="terminal" \
 		ws=3 name="browser" \
-		ws=4 name="code" \
-		ws=5 name="read" \
-		ws=6 name="play"
+		ws=4 name="code"
 
 	# minimum width/height for resizing and minimum allowed on-screen when moving
 	dkcmd set win_minwh=50 win_minxy=10
     
-	# no gaps and borders in single window layouts
-	dkcmd set smart_gap=true smart_border=true
+	# gaps and borders are on or off on every window
+	dkcmd set smart_gap=false smart_border=false
     
 	# obeying hints on windows that draw their own
 	dkcmd set obey_motif=true

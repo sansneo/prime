@@ -91,11 +91,13 @@ c.content.cookies.accept = "no-unknown-3rdparty"
 c.colors.webpage.preferred_color_scheme = "dark"
 c.content.blocking.method = "both"
 c.content.blocking.adblock.lists = [
+    "https://big.oisd.nl",
     "https://easylist.to/easylist/easylist.txt",
     "https://easylist.to/easylist/easyprivacy.txt",
+    "https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-social/hosts"
 ]
 c.downloads.location.suggestion = "both"
-c.editor.command = ["code-oss", "{file}"]
+c.editor.command = ["code", "{file}"]
 c.fileselect.folder.command = ["alacritty", "-e", "ranger", "--choosefiles={}"]
 c.fileselect.multiple_files.command = ["alacritty", "-e", "ranger", "--choosefiles={}"]
 
