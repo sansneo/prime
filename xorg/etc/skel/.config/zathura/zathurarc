@@ -15,3 +15,11 @@ set scroll-step 100
 
 # Use the system clipboard
 set selection-clipboard "clipboard"
+
+# Reverse colors
+map r recolor
+map R recolor
+
+# Rotate
+map > rotate rotate-cw
+map < rotate rotate-ccw

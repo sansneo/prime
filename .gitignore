@@ -6,6 +6,9 @@
 *.so
 *.test
 *.iso
+*.tar.*
+/xorg/etc/skel/.local/code/*
+!/xorg/etc/skel/.local/code/.gitkeep
 
 # Databases
 *.db

@@ -4,8 +4,8 @@
 # xrandr --output eDP --off
 
 # Let the monitor OCD settings handle screen turn off
-xset -dpms
-xset s off
+# xset -dpms
+# xset s off
 
 # Lock the screen after 20 minutes of inactivity
 # xautolock -time 20 -locker slock &

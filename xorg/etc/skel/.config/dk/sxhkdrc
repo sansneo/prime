@@ -60,6 +60,12 @@ super + shift + {h,j,k,l}
 super + ctrl + {h,j,k,l}
 	dkcmd win resize {w=-30,h=+30,h=-30,w=+30}
 
+# toggle borders
+super + {less,greater}
+	dkcmd set border width={4,0}
+super + shift + {less,greater}
+	dkcmd set border width={4,0}
+
 # reload bindings (sxhkd)
 super + r
 	pkill -USR1 -x sxhkd
