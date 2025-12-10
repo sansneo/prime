@@ -187,17 +187,15 @@ Don't use fucking AI[^5] whenever you can't understand something.
 ## Screenshots
 ![Concept](./xorg/etc/skel/image/light.png)
 ![Prompt](./design/prompt.png)
-![Vim](./design/vim.png)
 ![VSCode](./design/vscode.png)
 
 Is it supposed to look pretty?   
 That's not the point, but I'm happy it does!
 
 ## Keybindings
-[TABLE.md](./TABLE.md).
+Read [TABLE.md](./TABLE.md).
 
-> [!TIP]
-> Modify `~/.apps` to choose which applications are listed in the filtered launcher.
+Modify `~/.apps` to choose which applications are listed in the filtered launcher.
 
 ## Installation
 1. Boot it up and run `sudo void-installer`, follow the process and done 🎉!  
@@ -215,19 +213,19 @@ You know how to partition and where to mount stuff, you are a big boy/girl.
 CPU microcode
 ```sh
 # For Intel CPUs
-xbps-install -Syu linux-firmware-intel
+vpm install linux-firmware-intel
 # For AMD CPUs
-xbps-install -Syu linux-firmware-amd
+vpm install linux-firmware-amd
 ```
 
 GPU drivers
 ```sh
 # For AMD GPUs
-xbps-install -Syu mesa-vulkan-radeon xf86-video-amdgpu xf86-video-ati
+vpm install mesa-vulkan-radeon xf86-video-amdgpu xf86-video-ati
 # For Nvidia GPUs
-xbps-install -Syu nvidia nvidia-vaapi-driver nvidia-docker
+vpm install nvidia nvidia-vaapi-driver nvidia-docker
 # For Intel GPUs
-xbps-install -Syu intel-video-accel intel-media-driver
+vpm install intel-video-accel intel-media-driver
 ```
 
 3. Make sure your `.xinitrc` is just the way you want it!
@@ -282,9 +280,9 @@ sudo flatpak install io.github.ryubing.Ryujinx
 ```
 
 > [!TIP]
-> I recommend Signal to text and call with your friends.
-> It's better then the alternatives to me just because it feels private!
-> You can find it in the repositories as Signal-Desktop.
+> I like Signal to text and call with friends.  
+> It feels better then the alternatives to me!  
+> You can find it in the repositories as `Signal-Desktop`.
 
 ## Building
 
@@ -309,7 +307,7 @@ su
 sh build.sh
 ```
 
-It's going to take a while...  
+This is gonna take a while...  
 You'll find the resulting files in `build/`.  
 To learn more, take a look at `build.sh` and refer to [void-linux/void-mklive](https://github.com/void-linux/void-mklive).
 

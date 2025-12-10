@@ -3,12 +3,9 @@ The entire system uses Vi style bindings.
 GNU Bash, the user shell, defaults to Emacs style bindings.  
 This can be changed by adding `set -o vi` to your `.bashrc`!  
 
-Additionally, VSCode with the VSCodeVim extension and Vim itself have [commentary](https://github.com/tpope/vim-commentary) and [surround](https://github.com/tpope/vim-surround) available.
-
 In addition, both Vim and VSCode (with the VSCodeVim extension) include the powerful [commentary](https://github.com/tpope/vim-commentary) and [surround](https://github.com/tpope/vim-surround) plugins.
 
-Here follows a table listing bindings that are additional to the defaults, differ from the defaults or are just really useful so I don't forget them!  
-You are expected to read the documentation for each tool.
+Here follows a table listing bindings that are additional to the defaults, differ from the defaults or are just really useful so I don't forget them! You are expected to read the documentation for each tool.
 
 ## Alacritty
 | Binding | Description |
