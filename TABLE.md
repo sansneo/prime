@@ -78,11 +78,11 @@ Here follows a table listing bindings that are additional to the defaults, diffe
 | u | Reopen tab |
 | gi | Focus searchable field |
 | o/O | Search in current/new tab |
-| Go/GO | Edit URL in current/new tab |
-| XO/Xo | Edit/open URL in background tab |
+| go/gO | Edit URL in current/new tab |
+| xo/xO | Open/Edit URL in background tab |
 | H/L | Navigate back/forward |
 | yy | Copy URL |
-| PP | Paste URL and open in new tab |
+| pp/PP | Paste URL in current/new tab |
 | f/F | Open hint in current/new tab |
 | ; | Filter hints |
 | ` | Set mark |

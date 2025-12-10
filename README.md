@@ -250,6 +250,16 @@ Edit `/etc/dhcpcd.conf` to specify your preferred DNS servers (by default, Cloud
 To prevent dhcpcd from overwriting your `/etc/resolv.conf`, uncomment `nohook resolv.conf`.  
 To use your gateway's default DNS server, comment `nooption domain_name_servers` and `nooption rdnss`.
 
+4. Install the VSCode extensions
+```
+code --install-extension github.github-vscode-theme
+code --install-extension vscodevim.vim
+code --install-extension ms-vscode.cpptools
+code --install-extension golang.go
+code --install-extension ms-python.python 
+code --install-extension gleam.gleam
+```
+
 ## Flatpaks
 Add the Flathub remote.
 ```sh
