@@ -4,5 +4,4 @@ bindings = [
   { key = "C",        mods = "Control|Shift", action = "Copy" },
   { key = "J",        mods = "Control", action = "ScrollLineDown" },
   { key = "K",        mods = "Control", action = "ScrollLineUp" },
-  { key = "Space",    mods = "Control", action = "ToggleViMode" },
 ]

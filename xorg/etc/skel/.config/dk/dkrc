@@ -14,15 +14,15 @@ logfile="$HOME/.dklog"
 
 	# workspaces names
 	dkcmd set \
-		ws=1 name="routine" \
+		ws=1 name="life" \
 		ws=2 name="terminal" \
-		ws=3 name="browser" \
-		ws=4 name="code"
+		ws=3 name="editor" \
+		ws=4 name="browser"
 
 	# minimum width/height for resizing and minimum allowed on-screen when moving
 	dkcmd set win_minwh=50 win_minxy=10
     
-	# gaps and borders are on or off on every window
+	# gaps and borders are completely on or off for every window
 	dkcmd set smart_gap=false smart_border=false
     
 	# obeying hints on windows that draw their own
@@ -32,10 +32,8 @@ logfile="$HOME/.dklog"
 	dkcmd set border width=0 outer_width=0 colour \
 		focus='#4ad66d' \
 		unfocus='#ffffff' \
-		urgent='#ee5555' \
 		outer_focus='#4ad66d' \
 		outer_unfocus='#ffffff' \
-		outer_urgent='#222222'
 
 	# focus on mouse enter
 	dkcmd focus_mouse=true

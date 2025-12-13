@@ -41,6 +41,7 @@ Let's get into it!
 * gettext: localization utilities
 * usbutils: usb utilities
 * bash and dash: user and system shell
+* zellij: multiplexer
 * atool (supporting gzip, tar, xz, 7zip, unzip and unrar): archive and unarchive
 * util-linux: system utilities
 * procps-ng: processes utilities
@@ -65,7 +66,8 @@ Let's get into it!
 * xbps and vpm: manage packages
 * ethtool: query and control network driver and hardware
 * openssl: cryptography
-* xh: send http and socks requests
+* curl: send http and socks requests
+* trurl: parse and manipulate urls
 * jq: json processor
 * traceroute: follow network packets
 * iproute2 and iputils: network utilities
@@ -105,7 +107,7 @@ Let's get into it!
 * troff, groff and typst: typesetting
 * diffutils: diff utilities
 * patch: patch source files
-* git: version control system
+* git and github-cli: version control system
 
 ### Xorg
 * acpid: power management
@@ -129,19 +131,20 @@ Let's get into it!
 * xwallpaper: set wallpaper
 * ranger: file manager
 * nsxiv: view images
-* ffmpeg: process and play audios and videos
+* ffmpeg: play (and manipulate) audios and videos
 * zathura (supporting pdf, epub, xps, cbz, cbr, cb7 and cbt): read documents
 
 #### Apps
 * vscode: graphical editor
 * qutebrowser: web browser
-* qbittorrent: torrent
+* signal: chat
+* qbittorrent: torrent client
+* nicotine: soulseek client
 * obs: record and live stream
 * cutter: rizin frontend
 * flatpak: self-contain applications
   * rustdesk: remote desktop
   * heroic: play native and windows games using proton
-  * mgba: play nintendo gba games by emulating them
   * melonds: play nintendo ds games by emulating them
   * ryujinx: play nintendo switch games by emulating them
 
@@ -170,12 +173,13 @@ Let's get into it!
 * [Manned](https://manned.org)
 
 #### Additional
+* [Zellij](https://zellij.dev/documentation)
 * [VSCode](https://code.visualstudio.com/docs)
 * [Qutebrowser](https://qutebrowser.org/doc/help/index.html)
 * [Cutter](https://cutter.re)
 * [Heroic](https://heroicgameslauncher.com)
 
-Absolutely explore the highly curated [quickmarks](xorg/etc/skel/.config/qutebrowser/quickmarks)!
+Take a look at the highly curated [quickmarks](xorg/etc/skel/.config/qutebrowser/quickmarks)!
 
 > [!TIP]
 > Offline?
@@ -195,7 +199,7 @@ That's not the point, but I'm happy it does!
 ## Keybindings
 Read [TABLE.md](./TABLE.md).
 
-Modify `~/.apps` to choose which applications are listed in the filtered launcher.
+Modify `~/.filter` to choose which applications are listed in the filtered launcher.
 
 ## Installation
 1. Boot it up and run `sudo void-installer`, follow the process and done 🎉!  
@@ -250,7 +254,7 @@ Edit `/etc/dhcpcd.conf` to specify your preferred DNS servers (by default, Cloud
 To prevent dhcpcd from overwriting your `/etc/resolv.conf`, uncomment `nohook resolv.conf`.  
 To use your gateway's default DNS server, comment `nooption domain_name_servers` and `nooption rdnss`.
 
-4. Install the VSCode extensions
+4. Install the VSCode extensions required by the configuration
 ```
 code --install-extension github.github-vscode-theme
 code --install-extension vscodevim.vim
@@ -261,11 +265,11 @@ code --install-extension gleam.gleam
 ```
 
 ## Flatpaks
-Add the Flathub remote.
+Add the Flathub remote
 ```sh
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 ```
-Install the flatpaks.
+Install the flatpaks
 * RustDesk
 ```sh
 sudo flatpak install com.rustdesk.RustDesk
@@ -275,10 +279,6 @@ sudo flatpak install com.rustdesk.RustDesk
 sudo flatpak install com.heroicgameslauncher.hgl
 sudo flatpak override --nofilesystem=~/Games/Heroic com.heroicgameslauncher.hgl
 sudo flatpak override --filesystem=~/games com.heroicgameslauncher.hgl
-```
-* mGBA
-```sh
-sudo flatpak install io.mgba.mGBA
 ```
 * MelonDS
 ```sh
@@ -290,9 +290,9 @@ sudo flatpak install io.github.ryubing.Ryujinx
 ```
 
 > [!TIP]
-> I like Signal to text and call with friends.  
-> It feels better then the alternatives to me!  
-> You can find it in the repositories as `Signal-Desktop`.
+> Signal is my preferred platform to text and call with friends, it's open source, secure and to the point.  
+> This isn't installed as a Flatpak, you can find it as `Signal-Desktop` in the repositories.  
+> My Instagram is mostly a face thing, I don't really use it.
 
 ## Building
 
@@ -334,8 +334,9 @@ Thanks to computers I have the knowledge.
 Thanks to luck I have the genetics.   
 What's stopping me?  
 
-Life can be beautiful (even if it can definitely feel dark at times), self-improvement is the best and my drive will never stop.  
-I believe in you, dear reader. We won't stand for mediocrity.
+Life can be beautiful (even if it can definitely feel dark at times), self-improvement is the best and my drive will never stop. I believe in you, dear reader. 
+
+We won't stand for mediocrity.
 
 # Footnotes
 [^1]: Yes, this is a Linux kernel with the GNU userspace plus a lot more meaning complexity is gonna be pretty high compared to something like OpenBSD or Plan 9, but I can't compromise on functionality and focusing on the toolset alone, it's really not that bad given you have 20 years to spare, point is, it's doable and cool!

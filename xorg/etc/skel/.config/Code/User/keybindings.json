@@ -3,40 +3,44 @@
 		"key": "ctrl+shift+v",
 		"command": "-markdown.showPreview"
 	},
+	{
+		"key": "ctrl+q",
+		"command": "workbench.action.quickOpen"
+	},
+	{
+		"key": "ctrl+shift+q",
+		"command": "workbench.action.quickOpen"
+	},
 	// terminal
 	{
-		"key": "ctrl+j",
+		"key": "ctrl+o",
 		"command": "workbench.action.terminal.toggleTerminal",
 		"when": "!terminalFocus"
 	},
 	{
-		"key": "ctrl+j",
+		"key": "ctrl+o",
 		"command": "workbench.action.focusActiveEditorGroup",
 		"when": "terminalFocus"
 	},
 	{
-		"key": "ctrl+shift+j",
+		"key": "ctrl+shift+o",
 		"command": "workbench.action.togglePanel"
 	},
 	{
-		"key": "ctrl+k",
-		"command": "workbench.action.terminal.kill",
-		"when": "terminalFocus"
+		"key": "ctrl+shift+n",
+		"command": "workbench.action.terminal.new"
+	},
+	{
+		"key": "ctrl+shift+m",
+		"command": "workbench.action.terminal.kill"
+	},
+	{
+		"key": "ctrl+shift+j",
+		"command": "workbench.action.terminal.focusNext",
 	},
 	{
 		"key": "ctrl+shift+k",
-		"command": "workbench.action.terminal.new",
-		"when": "terminalFocus"
-	},
-	{
-		"key": "ctrl+shift+a",
-		"command": "workbench.action.terminal.focusNext",
-		"when": "terminalFocus"
-	},
-	{
-		"key": "ctrl+shift+b",
 		"command": "workbench.action.terminal.focusPrevious",
-		"when": "terminalFocus"
 	},
 	// explorer
 	{
@@ -44,23 +48,19 @@
 		"command": "workbench.view.explorer"
 	},
 	{
-		"key": "ctrl+q",
-		"command": "workbench.action.quickOpen"
-	},
-	{
 		"key": "n",
 		"command": "explorer.newFile",
+		"when": "filesExplorerFocus && !inputFocus"
+	},
+	{
+		"command": "renameFile",
+		"key": "r",
 		"when": "filesExplorerFocus && !inputFocus"
 	},
 	{
 		"key": "shift+n",
 		"command": "explorer.newFolder",
 		"when": "explorerViewletFocus"
-	},
-	{
-		"command": "renameFile",
-		"key": "r",
-		"when": "filesExplorerFocus && !inputFocus"
 	},
 	{
 		"command": "deleteFile",
@@ -88,6 +88,26 @@
 		"when": "listFocus && !inputFocus"
 	},
 	{
+		"key": "ctrl+d",
+		"command": "list.focusPageDown",
+		"when": "listFocus && !inputFocus"
+	},
+	{
+		"key": "ctrl+u",
+		"command": "list.focusPageUp",
+		"when": "listFocus && !inputFocus"
+	},
+	{
+		"key": "g g",
+		"command": "list.focusFirst",
+		"when": "listFocus && !inputFocus"
+	},
+	{
+		"key": "g e",
+		"command": "list.focusLast",
+		"when": "listFocus && !inputFocus"
+	},
+	{
 		"key": "y",
 		"command": "filesExplorer.copy",
 		"when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus"
@@ -106,15 +126,5 @@
 		"key": "v",
 		"command": "filesExplorer.openFilePreserveFocus",
 		"when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus"
-	},
-	{
-		"key": "ctrl+d",
-		"command": "list.focusPageDown",
-		"when": "listFocus && !inputFocus"
-	},
-	{
-		"key": "ctrl+u",
-		"command": "list.focusPageUp",
-		"when": "listFocus && !inputFocus"
 	}
 ]

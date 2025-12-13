@@ -48,13 +48,32 @@
 	"editor.wordBasedSuggestions": "off",
 	"editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
 	// vim
+	"vim.normalModeKeyBindingsNonRecursive": [
+		{
+			"before": [
+				"U"
+			],
+			"after": [
+				"<C-r>"
+			]
+		},
+		{
+			"before": [
+				"<C-r>"
+			],
+			"after": [
+				"U"
+			]
+		}
+	],
 	"vim.handleKeys": {
 		"<C-a>": false,
 		"<C-b>": false,
 		"<C-e>": false,
 		"<C-f>": false,
 		"<C-k>": false,
-		"<C-n>": false
+		"<C-n>": false,
+		"<C-r>": false
 	},
 	"vim.surround": true,
 	"vim.useCtrlKeys": true,
@@ -62,15 +81,16 @@
 	// additional
 	"editor.accessibilitySupport": "off",
 	"extensions.ignoreRecommendations": true,
-	"workbench.editor.empty.hint": "hidden",
-	"workbench.startupEditor": "none",
-	"window.title": "${dirty}${rootName}${separator}${activeEditorShort}${separator}${profileName}${separator}${appName}",
-	// no ai crap
-	"chat.agent.enabled": false,
 	"security.workspace.trust.untrustedFiles": "open",
 	"telemetry.telemetryLevel": "off",
+	"window.title": "${dirty}${rootName}${separator}${activeEditorShort}${separator}${profileName}${separator}${appName}",
+	"workbench.editor.empty.hint": "hidden",
+	"workbench.startupEditor": "none",
+	// no ai crap
+	"chat.agent.enabled": false,
+	"chat.disableAIFeatures": true,
 	"workbench.secondarySideBar.defaultVisibility": "hidden",
 	// what the fuck even is this?
 	"debug.console.collapseIdenticalLines": false,
-	"terminal.integrated.shellIntegration.enabled": false
+	"terminal.integrated.shellIntegration.enabled": false,
 }

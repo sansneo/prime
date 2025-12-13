@@ -6,8 +6,8 @@ super + z
 super + shift + z
     scrot -s ~/image/screenshot/%Y-%m-%d-%H%M%S.png -e 'xclip -selection clipboard -target image/png -i $f'
 
-# tile floating window
-super + x
+# toggle floating
+super + shift + x
 	dkcmd win float
 
 # lock screen (slock)
@@ -16,9 +16,9 @@ super + shift + c
 
 # launcher (dmenu)
 super + space
-	app=$(cat ~/.apps | dmenu -i -p "Run > " -nb '#000000' -nf '#ffffff' -sb '#4ad66d' -sf '#000000' -fn 'JetBrainsMono:size=14:extrabold') ; exec $app
-super + shift + space
 	dmenu_run -i -p "Run > " -nb '#000000' -nf '#ffffff' -sb '#4ad66d' -sf '#000000' -fn 'JetBrainsMono:size=14:extrabold'
+super + shift + space
+	app=$(cat ~/.apps | dmenu -i -p "Run > " -nb '#000000' -nf '#ffffff' -sb '#4ad66d' -sf '#000000' -fn 'JetBrainsMono:size=14:extrabold') ; exec $app
 
 # monitor
 super {_,shift + ,ctrl + }{n,m,b}
@@ -39,9 +39,11 @@ super + {_,shift + ,ctrl + }{w,a,s,d,u,i,o,p}
 # view last workspace
 super + Tab
 	dkcmd ws view last
+super + BackSpace
+	dkcmd ws view last
 
 # close window
-super + BackSpace
+super + shift + BackSpace
 	dkcmd win kill
 
 # focus next or previous window
