@@ -1,6 +1,8 @@
 # Environment
 export COLORTERM="truecolor"
-export FLATPATH="$HOME/.flat" PATH="$PATH:$FLATPATH:$HOME/.local/code/bin"
+PATH="$HOME/.local/script/"
+PATH="$HOME/.local/code/bin/"
+export FLATPATH="$HOME/.flat/" PATH="$PATH:$FLATPATH"
 
 # Aliases
 alias xclip="xclip -selection clipboard"

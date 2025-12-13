@@ -44,6 +44,8 @@ vnoremap <C-c> <Esc>
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
 nnoremap <silent> <C-l> :nohl<CR>
+nnoremap U <C-r>
+autocmd VimEnter * nnoremap <C-r> <nop>
 
 " Netrw
 let g:netrw_banner=0

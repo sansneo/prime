@@ -3,9 +3,9 @@ config.load_autoconfig(False)
 
 # Fonts
 c.fonts.default_family = "JetBrainsMono"
-c.fonts.default_size = "12pt"
-c.fonts.tabs.selected = "bold 12pt JetBrainsMono"
-c.fonts.tabs.unselected = "bold 12pt JetBrainsMono"
+c.fonts.default_size = "11pt"
+c.fonts.tabs.selected = "bold 11pt JetBrainsMono"
+c.fonts.tabs.unselected = "bold 11pt JetBrainsMono"
 
 # Completion
 c.colors.completion.even.bg = "#000000"
@@ -43,14 +43,14 @@ c.colors.tabs.even.bg = "#000000"
 c.colors.tabs.even.fg = "#ffffff"
 c.colors.tabs.odd.bg = "#000000"
 c.colors.tabs.odd.fg = "#ffffff"
-c.tabs.indicator.width = 2
+c.tabs.indicator.width = 0
 c.tabs.favicons.scale = 0.8
 c.tabs.title.alignment = "left"
 c.tabs.title.format = "{audio}{current_title}"
 c.tabs.title.format_pinned = "{audio}{current_title}"
 c.tabs.position = "right"
-c.tabs.width = "15%"
-c.tabs.padding = {"top": 4, "bottom": 4, "left": 4, "right": 4}
+c.tabs.width = "17%"
+c.tabs.padding = {"top": 2, "bottom": 2, "left": 5, "right": 3}
 ## Pinned
 c.colors.tabs.pinned.odd.bg = "#000000"
 c.colors.tabs.pinned.odd.fg = "#ffff55"
@@ -83,11 +83,11 @@ c.statusbar.show = "in-mode"
 c.statusbar.padding = {"bottom": 2, "left": 0, "right": 0, "top": 2}
 c.messages.timeout = 500
 
-
 # Content
 c.content.javascript.enabled = True
 c.content.javascript.clipboard = "access-paste"
 c.content.cookies.accept = "no-unknown-3rdparty"
+c.content.autoplay = False
 c.colors.webpage.preferred_color_scheme = "dark"
 c.content.blocking.method = "both"
 c.content.blocking.adblock.lists = [

@@ -33,10 +33,13 @@ openssl
 openssh
 wget
 yt-dlp
-xh
+curl
+trurl
 jq
 git
 git-lfs
+github-cli
+zellij
 vim-x11
 xxd
 android-tools
@@ -132,6 +135,8 @@ zathura-pdf-mupdf
 qutebrowser
 python3-adblock
 qbittorrent
+nicotine+
+Signal-Desktop
 obs
 obs-plugin-browser-bin
 cutter

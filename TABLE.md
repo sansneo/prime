@@ -11,7 +11,6 @@ Here follows a table listing bindings that are additional to the defaults, diffe
 | Binding | Description |
 |---------|-------------|
 | Ctrl+j/k | Scroll down/up |
-| Ctrl+Shift+Space | Enter Vi mode |
 | Ctrl+Shift+c | Copy |
 | Ctrl+Shift+v | Paste |
 
@@ -24,14 +23,14 @@ Here follows a table listing bindings that are additional to the defaults, diffe
 ## VSCode
 | Binding | Description |
 |---------|-------------|
-| Ctrl+j | Focus/unfocus terminal pane |
-| Ctrl+Shift+j | Toggle terminal pane |
-| Ctrl+k | Kill terminal |
-| Ctrl+Shift+k | Create new terminal |
-| Ctrl+Shift+a/Ctrl+Shift+b | Next/previous terminal |
-| Ctrl+e | Focus/unfocus explorer |
+| Ctrl+o | Focus/unfocus terminal panel |
+| Ctrl+Shift+o | Toggle terminal panel |
+| Ctrl+Shift+n | New shell |
+| Ctrl+Shift+m | Kill shell |
+| Ctrl+Shift+j/k | Next/Previous shell |
+| Ctrl+e | Focus/Unfocus explorer |
 | Ctrl+q | Open file picker |
-| h/l (Explorer) | Fold/unfold |
+| h/l (Explorer) | Fold/Unfold |
 | n (Explorer) | Create new file |
 | Shift+n (Explorer) | Create new folder |
 | r (Explorer) | Rename file |
@@ -47,9 +46,9 @@ Here follows a table listing bindings that are additional to the defaults, diffe
 ## Sxhkd
 | Binding | Description |
 |---------|-------------|
-| Super+z | Take fullscreen screenshot |
-| Super+Shift+z | Take region screenshot |
-| Super+x | Tile floating window |
+| Super+z | Fullscreen screenshot |
+| Super+Shift+z | Region screenshot |
+| Super+Shift+x | Toggle floating |
 | Super+Shift+c | Lock screen |
 | Super+Space | Open filtered launcher |
 | Super+Shift+Space | Open unfiltered launcher |
@@ -57,9 +56,9 @@ Here follows a table listing bindings that are additional to the defaults, diffe
 | Super+w/a/s/d/u/i/o/p | Switch workspace |
 | Super+q/e | Switch to previous/next workspace |
 | Super+Tab | Switch to last workspace |
-| Super+BackSpace | Kill focused window |
+| Super+Shift+BackSpace | Kill focused window |
 | Super+j/k | Focus next/previous window |
-| Super+h/l | Add/remove master stack window |
+| Super+h/l | Increase/Decrese master stack size |
 | Super+Shift+h/j/k/l | Move window |
 | Super+Ctrl+h/j/k/l | Resize window |
 | Super+</> | Toggle window borders |
