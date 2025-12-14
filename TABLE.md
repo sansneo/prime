@@ -50,8 +50,8 @@ Here follows a table listing bindings that are additional to the defaults, diffe
 | Super+Shift+z | Region screenshot |
 | Super+Shift+x | Toggle floating |
 | Super+Shift+c | Lock screen |
-| Super+Space | Open filtered launcher |
-| Super+Shift+Space | Open unfiltered launcher |
+| Super+Space | Open unfiltered launcher |
+| Super+Shift+Space | Open filtered launcher |
 | Super+n/m/b | Switch monitor |
 | Super+w/a/s/d/u/i/o/p | Switch workspace |
 | Super+q/e | Switch to previous/next workspace |

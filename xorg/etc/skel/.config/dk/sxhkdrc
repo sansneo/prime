@@ -16,9 +16,9 @@ super + shift + c
 
 # launcher (dmenu)
 super + space
-	app=$(cat ~/.apps | dmenu -i -p "Run > " -nb '#000000' -nf '#ffffff' -sb '#4ad66d' -sf '#000000' -fn 'JetBrainsMono:size=14:extrabold') ; exec $app
-super + shift + space
 	dmenu_run -i -p "Run > " -nb '#000000' -nf '#ffffff' -sb '#4ad66d' -sf '#000000' -fn 'JetBrainsMono:size=14:extrabold'
+super + shift + space
+	app=$(cat ~/.apps | dmenu -i -p "Run > " -nb '#000000' -nf '#ffffff' -sb '#4ad66d' -sf '#000000' -fn 'JetBrainsMono:size=14:extrabold') ; exec $app
 
 # monitor
 super {_,shift + ,ctrl + }{n,m,b}

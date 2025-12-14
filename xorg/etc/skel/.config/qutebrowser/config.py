@@ -103,7 +103,7 @@ c.fileselect.multiple_files.command = ["alacritty", "-e", "ranger", "--choosefil
 
 # Session
 c.auto_save.session = True
-c.url.start_pages = ["https://google.com"]
+c.url.start_pages = ["https://youtu.be/vcGeWUiWrT4?si=QdB4-XEglr0l5yJV", "https://github.com/sansneo/prime", "https://google.com"]
 c.url.default_page = "https://google.com"
 c.url.searchengines = {
     "DEFAULT": "https://www.google.com/search?q={}",

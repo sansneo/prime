@@ -1,6 +1,6 @@
 theme "him"
+pane_frames false
 simplified_ui false
-pane_frames true
 styled_underlines true
 
 show_startup_tips false
@@ -11,5 +11,5 @@ copy_command "xclip -selection clipboard"
 
 web_server false
 
-// Go expert mode
-// default_layout "compact"
+// Expert mode
+default_layout "compact"
