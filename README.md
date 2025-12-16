@@ -31,10 +31,10 @@ Let's get into it!
 
 ## Headless
 Packages are (mostly) organized by the following priority order:  
-`Kernel → Shell → Userland (non‑network) → Userland (network) → Daemons` and  
-within each priority, they are grouped by origin: `Linux project → GNU project → Other projects`.
+`Kernel > Shell > Userland (non‑network) > Userland (network) > Daemons` and  
+within each priority, grouped by origin: `Linux project > GNU project > Other projects`.
 
-Pure driver packages are not listed here, though these are installed as part of the system and are very much essential.
+Pure driver packages are not listed, though these are installed as part of the system and are very much essential.
 
 ### Toolset
 * linux and kmod: kernel and modules
@@ -158,6 +158,8 @@ Packages that are not part of the toolset, but are part of headless.
   * melonds: play nintendo ds games by emulating them
   * ryujinx: play nintendo switch games by emulating them
 
+In addition to the drivers, language servers, linters, and formatters for some languages are also installed.
+
 ### Documentation
 * [GNU](https://www.gnu.org/manual/manual.html)
 * [Linux](https://kernel.org)
@@ -195,13 +197,11 @@ Don't use fucking AI[^5] whenever you can't understand something.
 
 ## Screenshots
 ![Concept](./xorg/etc/skel/image/light.png)
-![Alacritty, Tmux and Helix]()
-![Qutebrowser]()
+![Alacritty, Tmux and Helix](./design/terminal.png)
+![Qutebrowser](./design/browser.png)
 
 Is it supposed to look pretty?   
 That's not the point, but I'm happy it does!
-
-Use [TABLE.md](./TABLE.md) for a keybindings reference.
 
 ## Installation
 1. Boot it up and run `sudo void-installer`, follow the process and done 🎉!  
@@ -262,7 +262,7 @@ Remove the default Helix themes to declutter the menu and keep only my selection
 sudo rm /usr/lib/helix/runtime/themes*
 ```
 
-Install goimports (not part of the repositories) for on-format automatic imports while working with Go (the most beautiful language).
+Install goimports (not part of the repositories) for on-format automatic imports with Go.
 ```sh
 go install golang.org/x/tools/cmd/goimports@latest
 ```
@@ -296,17 +296,16 @@ sudo flatpak install io.github.ryubing.Ryujinx
 ```
 
 > [!NOTE]
-> It's super cool almost every game runs flawlessly and with almost no setup required.  
+> It's super cool that almost every game runs flawlessly with almost no setup required on Linux now.  
+> One limitation is (usually competitive) multiplayer games with kernel level anti-cheats. Honestly, it might be better this way.  
 > Heroic can install pirated[^6] games by first running Warez scene installers.
 
 You can of course, install everything else you need from the repos or manually!
 
-I'd love a world where I can use Signal (`Signal-Desktop`) as my platform to text and call with people I care about.  
+I'd love a world where I can use [Signal](https://github.com/signalapp) as my platform to text and call with people I care about.  
 It's open source, secure and to the point.  
-Sadly, we are not there yet, my Instagram is mostly a face thing, but I use it from time to time and WhatsApp is still installed on my phone.
-
-## Keybindings
-I have a list of non-default and useful ones here [TABLE.md](./TABLE.md), so I never forget them!
+Sadly, we are not there yet.  
+My Instagram is mostly a face thing, but I use it from time to time and WhatsApp is still installed on my phone.
 
 Modify `~/.filter` to choose which applications are listed in the filtered launcher.
 

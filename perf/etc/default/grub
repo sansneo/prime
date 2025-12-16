@@ -1,5 +1,5 @@
 GRUB_DEFAULT=0
-GRUB_TIMEOUT=2
+GRUB_TIMEOUT=60
 GRUB_DISTRIBUTOR="Void Linux"
 GRUB_CMDLINE_LINUX_DEFAULT="nowatchdog loglevel=4 noibrs noibpb nopti nospectre_v2 nospectre_v1 l1tf=off nospec_store_bypass_disable no_stf_barrier mds=off mitigations=off elevator=noop transparent_hugepage=never"
 GRUB_DISABLE_RECOVERY=false

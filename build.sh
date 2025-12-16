@@ -45,6 +45,7 @@ tmate
 skim
 helix
 xxd
+ranger
 android-tools
 scrcpy
 vpm
@@ -59,7 +60,6 @@ rizin
 rz-ghidra
 ltrace
 strace
-bash
 go
 delve
 golangci-lint
