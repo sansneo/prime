@@ -1,5 +1,6 @@
 # Specific
-/mark*
+marksman*
+markdown-oxide*
 
 # Builds
 *.dll
