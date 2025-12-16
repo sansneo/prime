@@ -98,10 +98,11 @@ c.auto_save.session = True
 c.url.start_pages = ["https://google.com"]
 c.url.default_page = "https://google.com"
 c.url.searchengines = {
-    "DEFAULT": "https://www.google.com/search?q={}",
-    "wiki": "https://en.wikipedia.org/wiki/{}",
-    "episode": "https://next-episode.net/search?search={}",
+    "DEFAULT": "https://google.com/search?q={}",
     "youtube": "https://youtube.com/results?search_query={}",
+    "episode": "https://next-episode.net/search?search={}",
+    "wiki": "https://en.wikipedia.org/wiki/{}",
+    "word": "https://wordhippo.com/what-is/the-meaning-of-the-word/{}.html",
     "pkgsite": "https://pkg.go.dev/search?q={}",
     "pypi": "https://pypi.org/search/?q={}",
     "hex": "https://packages.gleam.run/?search={}",
