@@ -5,7 +5,7 @@ background = "#000000"
 [colors.normal]
 black = "#000000"
 red = "#ff5555"
-green = "#55ff55"
+green = "#4ad66d"
 yellow = "#ffff55"
 blue = "#5555ff"
 magenta = "#ff55ff"
@@ -15,9 +15,13 @@ white = "#bbbbbb"
 [colors.bright]
 black = "#555555"
 red = "#ff5555"
-green = "#55ff55"
+green = "#4ad66d"
 yellow = "#ffff55"
 blue = "#5555ff"
 magenta = "#ff55ff"
 cyan = "#55ffff"
 white = "#ffffff"
+
+[colors.cursor]
+cursor = "#ffffff"
+text   = "#000000"

@@ -39,8 +39,11 @@ jq
 git
 git-lfs
 github-cli
-zellij
-vim-x11
+ncurses
+tmux
+tmate
+skim
+helix
 xxd
 android-tools
 scrcpy
@@ -56,11 +59,19 @@ rizin
 rz-ghidra
 ltrace
 strace
+bash
 go
-python
+delve
+golangci-lint
+gopls
+python3
+python3-yapf
+python3-lsp-server
 gleam
 sqlite
 typst
+typstyle
+tinymist
 "
 development=$(clean "$development")
 
@@ -111,9 +122,7 @@ bluetooth=$(clean "$bluetooth")
 # Fonts
 fonts="
 noto-fonts-ttf
-noto-fonts-ttf-extra
 noto-fonts-emoji
-noto-fonts-cjk
 "
 fonts=$(clean "$fonts")
 
@@ -136,7 +145,6 @@ qutebrowser
 python3-adblock
 qbittorrent
 nicotine+
-Signal-Desktop
 obs
 obs-plugin-browser-bin
 cutter
@@ -147,11 +155,20 @@ apps=$(clean "$apps")
 # Are you root?
 if [ "$(id -u)" -ne 0 ]; then echo "Run as root!"; exit 1; fi
 
-# Pulling the baddies (the latest proprietary VSCode)
-VSCODE_URL="https://update.code.visualstudio.com/latest/linux-x64/stable"
-wget -O vscode.tar.gz "$VSCODE_URL"
-tar -xzf vscode.tar.gz -C ./xorg/etc/skel/.local/code --strip-components=1
-rm vscode.tar.gz
+# Marksman (not available in the repos)
+wget https://github.com/artempyanykh/marksman/releases/latest/download/marksman-linux-x64
+mv marksman-linux-x64 headless/etc/skel/.local/bin/marksman
+chmod +x headless/etc/skel/.local/bin/marksman
+
+# Markdown Oxide (not available in the repos)
+curl -s https://api.github.com/repos/Feel-ix-343/markdown-oxide/releases/latest \
+  | grep -oE '"browser_download_url":\s*"[^"]+"' \
+  | grep -E 'markdown-oxide-v.*-x86_64-unknown-linux-gnu' \
+  | head -n1 \
+  | cut -d '"' -f 4 \
+  | xargs -r wget -O markdown-oxide
+mv markdown-oxide headless/etc/skel/.local/bin
+chmod +x headless/etc/skel/.local/bin/markdown-oxide
 
 # Going into void-mklive
 cd void-mklive/

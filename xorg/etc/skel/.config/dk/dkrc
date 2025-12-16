@@ -7,24 +7,24 @@ logfile="$HOME/.dklog"
 { # compound command to redirect all output
 
 	# number of workspaces
-    dkcmd set numws=8
-			
+  dkcmd set numws=8
+
 	# defaulting to the tile layout
 	dkcmd set ws=_ apply layout=tile master=1 stack=3 gap=0 msplit=0.6 ssplit=0.4
 
 	# workspaces names
 	dkcmd set \
-		ws=1 name="life" \
-		ws=2 name="terminal" \
-		ws=3 name="editor" \
-		ws=4 name="browser"
+		ws=1 name="terminal" \
+		ws=2 name="browser" \
+		ws=3 name="reader" \
+		ws=4 name="empty"
 
 	# minimum width/height for resizing and minimum allowed on-screen when moving
 	dkcmd set win_minwh=50 win_minxy=10
-    
+
 	# gaps and borders are completely on or off for every window
 	dkcmd set smart_gap=false smart_border=false
-    
+
 	# obeying hints on windows that draw their own
 	dkcmd set obey_motif=true
 
@@ -38,13 +38,20 @@ logfile="$HOME/.dklog"
 	# focus on mouse enter
 	dkcmd focus_mouse=true
 
+	# rules
+	dkcmd rule class="^alacritty$" ws=1 focus=true terminal=true
+	dkcmd rule class="^qutebrowser$" ws=2 focus=true
+	dkcmd rule class="^zathura$" ws=3 focus=true
+
 	# mouse
-	dkcmd set mouse mod=super move=button3 resize=button1
-	
-	# disable mouse
-	# dkcmd set mouse mod=super move=buttonx resize=buttonx
+	dkcmd set mouse mod=super move=button1 resize=button3
 
 	# apply current rules
 	dkcmd rule apply '*'
 
 } >> "$logfile" 2>&1
+
+# Startup
+alacritty &
+qutebrowser &
+zathura &

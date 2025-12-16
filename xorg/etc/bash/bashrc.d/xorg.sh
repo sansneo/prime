@@ -1,7 +1,10 @@
-# Environment
+# Truecolor
 export COLORTERM="truecolor"
-PATH="$HOME/.local/script/"
-PATH="$HOME/.local/code/bin/"
+
+# Browser
+export BROWSER="qutebrowser"
+
+# Flatpak
 export FLATPATH="$HOME/.flat/" PATH="$PATH:$FLATPATH"
 
 # Aliases

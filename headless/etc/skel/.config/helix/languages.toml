@@ -1,0 +1,29 @@
+[[language]]
+name = "c"
+roots = [".ccls"]
+auto-format = true
+language-servers = ["ccls"]
+
+[language-server.ccls]
+command = "ccls"
+
+[[language]]
+name = "go"
+roots = ["go.mod"]
+auto-format = true
+language-servers = ["gopls"]
+formatter = { command = "goimports" }
+
+[[language]]
+name = "python"
+roots = ["pyproject.toml", "setup.py", "requirements.txt"]
+auto-format = true
+language-servers = ["pylsp"]
+formatter = { command = "yapf" }
+
+[[language]]
+name = "typst"
+roots = ["typst.toml"]
+auto-format = true
+language-servers = ["tinymist"]
+formatter = { command = "typstyle" }
