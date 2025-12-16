@@ -54,7 +54,7 @@ Pure driver packages are not listed, though these are installed as part of the s
 * sed: stream editor
 * less: pager
 * man and texinfo: read documentation
-* atool (supporting gzip, tar, xz, 7zip, unzip and unrar): archive and unarchive
+* atool (supporting gzip, tar, xz, 7z, zip and rar): archive and unarchive
 * e2fsprogs, btrfs-progs and xfsprogs: ext4, btrfs, xfs disk utilities
 * f2fs-tools, dosfstools and exfat-utils: fat and exfat utilities
 * ntfs-3g: ntfs disk utilities
