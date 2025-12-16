@@ -11,6 +11,7 @@
 # xautolock -time 20 -locker slock &
 
 # Wallpaper
+# xwallpaper --maximize ~/image/dark.png
 xwallpaper --maximize ~/image/light.png
 
 # Keyboard

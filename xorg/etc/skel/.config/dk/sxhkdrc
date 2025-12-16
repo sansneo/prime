@@ -21,8 +21,12 @@ super + shift + space
 	app=$(cat ~/.apps | dmenu -i -p "Run > " -nb '#000000' -nf '#ffffff' -sb '#4ad66d' -sf '#000000' -fn 'JetBrainsMono:size=14:extrabold') ; exec $app
 
 # monitor
-super {_,shift + ,ctrl + }{n,m,b}
-	dkcmd mon {view,send,follow} {prev,next,last}
+super {_,shift + ,ctrl + }{n,m}
+	dkcmd mon {view,send,follow} {prev,next}
+super + BackSpace
+	dkcmd mon view last
+super + shift + BackSpace
+	dkcmd mon view last
 
 # view previous workspace
 super + q
@@ -33,24 +37,20 @@ super + e
 	dkcmd ws next
 
 # view workspace
-super + {_,shift + ,ctrl + }{w,a,s,d,u,i,o,p}
+super + {_,shift + ,ctrl + }{a,s,d,w,u,i,o,p}
 	dkcmd ws {view,send,follow} {1-8}
 
 # view last workspace
 super + Tab
 	dkcmd ws view last
-super + BackSpace
+super + shift + Tab
 	dkcmd ws view last
-
-# close window
-super + shift + BackSpace
-	dkcmd win kill
 
 # focus next or previous window
 super + {j,k}
 	dkcmd win focus {next,prev}
 
-# change master or stack size
+# change master stack size
 super + {h,l}
 	dkcmd set master {+1,-1}
 
