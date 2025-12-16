@@ -45,6 +45,7 @@ tmate
 skim
 helix
 xxd
+ranger
 android-tools
 scrcpy
 vpm
@@ -59,7 +60,6 @@ rizin
 rz-ghidra
 ltrace
 strace
-bash
 go
 delve
 golangci-lint
@@ -122,7 +122,9 @@ bluetooth=$(clean "$bluetooth")
 # Fonts
 fonts="
 noto-fonts-ttf
+noto-fonts-ttf-extra
 noto-fonts-emoji
+noto-fonts-cjk
 "
 fonts=$(clean "$fonts")
 
