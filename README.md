@@ -1,5 +1,5 @@
 # prime
-> Masterable, comfy and distraction-free setup
+> For a masterable, comfy and distraction-free setup
 
 ```
  ______   ______     __     __    __     ______    
