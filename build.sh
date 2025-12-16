@@ -27,8 +27,10 @@ services=$(clean "$services")
 # Utilities
 utilities="
 atool
-7zip
-unrar
+zip
+unzip
+p7zip
+p7zip-unrar
 openssl
 openssh
 wget
