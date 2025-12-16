@@ -122,7 +122,9 @@ bluetooth=$(clean "$bluetooth")
 # Fonts
 fonts="
 noto-fonts-ttf
+noto-fonts-ttf-extra
 noto-fonts-emoji
+noto-fonts-cjk
 "
 fonts=$(clean "$fonts")
 

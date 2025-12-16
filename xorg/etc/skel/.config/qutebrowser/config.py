@@ -107,3 +107,6 @@ c.url.searchengines = {
     "pypi": "https://pypi.org/search/?q={}",
     "hex": "https://packages.gleam.run/?search={}",
 }
+
+# Bindings
+config.bind('ge', 'scroll-to-perc 100')
