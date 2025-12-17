@@ -110,3 +110,5 @@ c.url.searchengines = {
 
 # Bindings
 config.bind('ge', 'scroll-to-perc 100')
+config.bind('<Shift-J>', 'tab-prev')
+config.bind('<Shift-K>', 'tab-next')
