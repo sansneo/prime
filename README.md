@@ -34,7 +34,7 @@ Packages are (mostly) organized by the following priority order:
 `Kernel > Shell > Userland (non‑network) > Userland (network) > Daemons` and  
 within each priority, grouped by origin: `Linux project > GNU project > Other projects`.
 
-Pure driver packages are not listed, though these are installed as part of the system and are very much essential.
+Pure driver packages are not listed, but are installed as part of the system and are very much essential.
 
 ### Toolset
 * linux and kmod: kernel and modules
