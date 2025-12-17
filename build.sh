@@ -29,8 +29,8 @@ utilities="
 atool
 zip
 unzip
-p7zip
-p7zip-unrar
+7zip
+unrar
 openssl
 openssh
 wget
