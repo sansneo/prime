@@ -4,6 +4,8 @@ config.load_autoconfig(False)
 # Fonts
 c.fonts.default_family = "JetBrainsMono"
 c.fonts.default_size = "11pt"
+c.fonts.tabs.selected = "bold default_size default_family"
+c.fonts.tabs.unselected = "bold default_size default_family"
 
 # Completion
 c.colors.completion.even.bg = "#000000"
