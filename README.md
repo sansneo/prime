@@ -22,8 +22,8 @@ Is that you[^4]? Great! Then read the rest.
 There are three builds available based on the latest Void Linux x86_64-glibc.
 * Headless (`headless-prime.iso`), the toolset plus the drivers, (almost) nothing else.
 * Safe (`safe-xorg-prime.iso`), everything headless has plus audio, bluetooth, fonts, everything graphics and various applications.
-* Performance (`performance-xorg-prime.iso`), exactly like safe, but with insecure kernel boot options for a performance increase up to 20%!
-* Personal (`personal-xorg-prime.iso`), exactly like safe, but with opinionated additions such as the proprietary VSCode.
+* Performance (`performance-xorg-prime.iso`), just like safe, but with insecure kernel boot options for a performance increase up to 20%!
+* Personal (`personal-xorg-prime.iso`), safe with opionionated additions such as VSCode.
 
 > [!CAUTION]
 > Using performance your system will be vulnerable to Meltdown and a lot more, but unless there's someone else on your computer doing binary exploitation or process hacking,
@@ -107,16 +107,18 @@ Pure driver packages are not listed, but are installed as part of the system and
   * rizin: binary exploitation, process hacking and reverse engineering
 * gawk: awk implementation
 * go: compiled garbage collected language
+  * delve: debugger
 * python: runtime object oriented language
 * gleam: runtime functional language
 * sqlite: embeddable sql database
-* troff, groff and typst: typesetting
+* typst, troff and groff: typesetting
 * diffutils: diff utilities
 * patch: patch source files
 * git and github-cli: version control system
+* protobuf: protocol buffers compiler
 
 ### Additional
-Packages that are not part of the toolset, but are part of headless.
+Packages that are not part of the toolset, but are included in headless.
 * kbd: keyboard utilities (ttys)
 * gettext: localization utilities
 * bc: basic calculator
@@ -188,8 +190,6 @@ In addition to the drivers, language servers, linters, and formatters for some l
 * [Void](https://voidlinux.org)
 * [Manned](https://manned.org)
 
-Take a look at the highly curated [bookmarks](./extra/firefox/bookmarks.html) (and install them)!  
-
 > [!TIP]
 > Offline?
 > Use `man` to access manual pages.  
@@ -237,16 +237,17 @@ vpm install intel-video-accel intel-media-driver
 
 3. Make sure your `.xinitrc` is just the way you want it!
 
-4. Setup your browser.
+4. Finally, setup your browser.
+
 Use Firefox Sync to do this, so you never have to do it again. It's a pain.
 
-I personally install these extensions:
+Install the highly curated [bookmarks](./extra/firefox/bookmarks.html) and these extensions:
 * [Bitwarden](https://addons.mozilla.org/en-US/firefox/addon/bitwarden-password-manager)
 * [uBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin)
 * [YouTube Unhook](https://addons.mozilla.org/en-US/firefox/addon/youtube-recommended-videos)
 * [No More Gemini](https://addons.mozilla.org/en-US/firefox/addon/no-more-gemini)
 
-Try installing `search.json.mozlz4` to your profile (find it in `~/.mozilla/firefox`)!
+Then add `search.json.mozlz4` to your active profile (find it in `~/.mozilla/firefox`)!
 
 ### Tips
 You might want to install your `.gitconfig`!
@@ -278,6 +279,9 @@ Install goimports (not part of the repositories) for on-format automatic imports
 ```sh
 go install golang.org/x/tools/cmd/goimports@latest
 ```
+
+You can run the `kubectl`, `aws-cli` and `terraform` as Docker containers.  
+This requires the containerd and docker services to be running.
 
 ### Flatpaks
 Add the Flathub remote
