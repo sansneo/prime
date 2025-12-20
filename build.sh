@@ -65,8 +65,8 @@ ltrace
 strace
 go
 delve
-golangci-lint
 gopls
+protobuf
 python3
 python3-yapf
 python3-lsp-server
