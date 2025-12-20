@@ -42,6 +42,7 @@ logfile="$HOME/.dklog"
 	dkcmd rule class="^alacritty$" ws=1 focus=true terminal=true
 	dkcmd rule class="^firefox$" ws=2 focus=true
 	dkcmd rule class="^zathura$" ws=3 focus=true
+	# dkcmd rule class="^code$" ws=4 focus=true
 
 	# mouse
 	dkcmd set mouse mod=super move=button1 resize=button3
@@ -55,3 +56,4 @@ logfile="$HOME/.dklog"
 alacritty &
 firefox &
 zathura &
+# code &

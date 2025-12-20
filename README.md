@@ -22,8 +22,8 @@ Is that you[^4]? Great! Then read the rest.
 There are three builds available based on the latest Void Linux x86_64-glibc.
 * Headless (`headless-prime.iso`), the toolset plus the drivers, (almost) nothing else.
 * Safe (`safe-xorg-prime.iso`), everything headless has plus audio, bluetooth, fonts, everything graphics and various applications.
-* Performance (`performance-xorg-prime.iso`), exactly like safe, but with insecure kernel boot options for a performance increase up to 20%!
-* Personal (`personal-xorg-prime.iso`), exactly like safe, but with opinionated additions such as the proprietary VSCode.
+* Performance (`performance-xorg-prime.iso`), just like safe, but with insecure kernel boot options for a performance increase up to 20%!
+* Personal (`personal-xorg-prime.iso`), safe with opionionated additions such as VSCode.
 
 > [!CAUTION]
 > Using performance your system will be vulnerable to Meltdown and a lot more, but unless there's someone else on your computer doing binary exploitation or process hacking,
@@ -280,7 +280,8 @@ Install goimports (not part of the repositories) for on-format automatic imports
 go install golang.org/x/tools/cmd/goimports@latest
 ```
 
-You can run the `kubectl`, `aws-cli` and `terraform` as Docker containers (this requires the containerd and docker services to be running)!
+You can run the `kubectl`, `aws-cli` and `terraform` as Docker containers.  
+This requires the containerd and docker services to be running.
 
 ### Flatpaks
 Add the Flathub remote
