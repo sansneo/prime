@@ -1,0 +1,7 @@
+// My current VSCode keybindings.json
+[
+	{
+		"key": "ctrl+shift+v",
+		"command": "-markdown.showPreview"
+	},
+]

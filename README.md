@@ -23,9 +23,11 @@ There are three builds available based on the latest Void Linux x86_64-glibc.
 * Headless (`headless-prime.iso`), the toolset plus the drivers, (almost) nothing else.
 * Safe (`safe-xorg-prime.iso`), everything headless has plus audio, bluetooth, fonts, everything graphics and various applications.
 * Performance (`performance-xorg-prime.iso`), exactly like safe, but with insecure kernel boot options for a performance increase up to 20%!
+* Personal (`personal-xorg-prime.iso`), exactly like safe, but with opinionated additions such as the proprietary VSCode.
 
 > [!CAUTION]
-> Using performance your system will be vulnerable to Meltdown and a lot more, but unless there's someone else on your computer doing binary exploitation or process hacking, you are probably good.
+> Using performance your system will be vulnerable to Meltdown and a lot more, but unless there's someone else on your computer doing binary exploitation or process hacking,
+you are probably good.
 
 Let's get into it!
 
@@ -147,10 +149,10 @@ Packages that are not part of the toolset, but are part of headless.
 * zathura (supporting pdf, epub, xps, cbz, cbr, cb7 and cbt): read documents
 
 ### Apps
-* qutebrowser: web browser
+* firefox: web browser
 * obs: record and live stream
-* qbittorrent: torrent client
-* nicotine: soulseek client
+* qbittorrent: torrent
+* nicotine: soulseek
 * cutter: rizin frontend
 * flatpak: self-contain applications
   * rustdesk: remote desktop
@@ -186,7 +188,7 @@ In addition to the drivers, language servers, linters, and formatters for some l
 * [Void](https://voidlinux.org)
 * [Manned](https://manned.org)
 
-Take a look at the highly curated [quickmarks](xorg/etc/skel/.config/qutebrowser/quickmarks)!
+Take a look at the highly curated [bookmarks](./extra/firefox/bookmarks.html) (and install them)!  
 
 > [!TIP]
 > Offline?
@@ -198,9 +200,8 @@ Don't use fucking AI[^5] whenever you can't understand something.
 ## Screenshots
 ![Concept](./xorg/etc/skel/image/light.png)
 ![Alacritty, Tmux and Helix](./design/terminal.png)
-![Qutebrowser](./design/browser.png)
 
-Is it supposed to look pretty?   
+Is it supposed to look this pretty?   
 That's not the point, but I'm happy it does!
 
 ## Installation
@@ -236,8 +237,19 @@ vpm install intel-video-accel intel-media-driver
 
 3. Make sure your `.xinitrc` is just the way you want it!
 
+4. Setup your browser.
+Use Firefox Sync to do this, so you never have to do it again. It's a pain.
+
+I personally install these extensions:
+* [Bitwarden](https://addons.mozilla.org/en-US/firefox/addon/bitwarden-password-manager)
+* [uBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin)
+* [YouTube Unhook](https://addons.mozilla.org/en-US/firefox/addon/youtube-recommended-videos)
+* [No More Gemini](https://addons.mozilla.org/en-US/firefox/addon/no-more-gemini)
+
+Try installing `search.json.mozlz4` to your profile (find it in `~/.mozilla/firefox`)!
+
 ### Tips
-You might also want to install your `.gitconfig`!
+You might want to install your `.gitconfig`!
 ```ini
 [user]
   email = sansneolink@gmail.com
@@ -297,14 +309,14 @@ sudo flatpak install io.github.ryubing.Ryujinx
 
 > [!NOTE]
 > It's super cool that almost every game runs flawlessly with almost no setup required on Linux now.  
-> One limitation is (usually competitive) multiplayer games with kernel level anti-cheats. Honestly, it might be better this way.  
+> One limitation is (usually competitive) multiplayer games with kernel level anti-cheats.  
+> Honestly, it might be better this way.  
 > Heroic can install pirated[^6] games by first running Warez scene installers.
 
 You can of course, install everything else you need from the repos or manually!
 
 I'd love a world where I can use [Signal](https://github.com/signalapp) as my platform to text and call with people I care about.  
-It's open source, secure and to the point.  
-Sadly, we are not there yet.  
+It's open source, secure and to the point, sadly, we are not there yet.  
 My Instagram is mostly a face thing, but I use it from time to time and WhatsApp is still installed on my phone.
 
 Modify `~/.filter` to choose which applications are listed in the filtered launcher.
@@ -334,10 +346,12 @@ To learn more, take a look at `build.sh` and refer to [void-linux/void-mklive](h
 I love my computer! Do you?   
 
 Please, get the fuck out of IT if you are here [for the money](https://geohot.github.io/blog/jekyll/update/2025/09/13/get-out-of-technology.html).  
-Because of the [state of the world](https://www.slickcharts.com/sp500) there's a lot of money to be made here if you actually care about doing something real and creating value by making infrastructures and computers better.  
+Because of the [state of the world](https://www.slickcharts.com/sp500) there's a lot of money to be made here if you actually care about doing something real and
+creating value by making infrastructures and computers better.  
 Personally, I really enjoy everything systems programming, secure backend development and the cloud (this last one is known to be extremely remunerative), so I'll be doing that.  
 As time passes I look up to legends such as Rob Pike, Russ Cox and George Hotz more and more.  
-I am 22 years old at the time of writing this, in my 30s I'll have a pretty good understanding of my toolset and computers in general, then hopefully, in my 40s I'll be able to compare to them.
+I am 22 years old at the time of writing this, in my 30s I'll have a pretty good understanding of my toolset and computers in general, then hopefully,
+in my 40s I'll be able to compare to them.
 
 Thanks to computers, I have the knowledge.  
 Thanks to luck, I have the genetics.   
@@ -348,8 +362,8 @@ Life can be beautiful (even if it definitely can feel dark at times), self-impro
 We won't stand for mediocrity.
 
 # Footnotes
-[^1]: Yes, this is a Linux kernel with the GNU userspace plus a lot more meaning complexity is gonna be pretty high compared to something like OpenBSD or Plan 9, but I can't compromise on functionality and
-  focusing on the toolset alone, it's really not that bad given you have 20 years to spare, point is, it's doable!
+[^1]: Yes, this is a Linux kernel with the GNU userspace plus a lot more meaning complexity is gonna be pretty high compared to something like OpenBSD or Plan 9, but I can't
+compromise on functionality and focusing on the toolset alone, it's really not that bad given you have 20 years to spare, point is, it's doable!
 
 [^2]: This is the real enemy we face as developers, we need to reduce overhead and that mental fatigue that slowly builds while we work!
   Here's a video from [The Primeagen](https://www.youtube.com/watch?v=ZH3iKbEiks0) I really liked which touches on the topic.

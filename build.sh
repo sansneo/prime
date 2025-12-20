@@ -58,6 +58,7 @@ utilities=$(clean "$utilities")
 development="
 base-devel
 gdb
+clang-extra-tools
 rizin
 rz-ghidra
 ltrace
@@ -145,8 +146,7 @@ ffmpeg
 zathura
 zathura-cb
 zathura-pdf-mupdf
-qutebrowser
-python3-adblock
+firefox
 qbittorrent
 nicotine+
 obs
@@ -173,6 +173,11 @@ curl -s https://api.github.com/repos/Feel-ix-343/markdown-oxide/releases/latest 
   | xargs -r wget -O markdown-oxide
 mv markdown-oxide headless/etc/skel/.local/bin
 chmod +x headless/etc/skel/.local/bin/markdown-oxide
+
+# VSCode (proprietary version)
+wget -O vscode.tar.gz "https://code.visualstudio.com/sha/download?build=stable&os=linux-x64"
+tar -xzf ./vscode.tar.gz -C personal/etc/skel/.local/code --strip-components=1
+rm ./vscode.tar.gz
 
 # Going into void-mklive
 cd void-mklive/
@@ -212,6 +217,19 @@ cd void-mklive/
     -p "$xorg $audio $bluetooth $fonts $apps" \
     -e /bin/bash \
     -I ../headless -I ../xorg -I ../perf \
+    -S "dhcpcd cronie tlp iwd bluetoothd dbus polkitd" \
+    -C "vconsole.keymap=us nowatchdog live.autologin live.shell=/bin/bash"
+
+# Personal
+./mkiso.sh -a x86_64 \
+    -r "https://repo-fastly.voidlinux.org/current" \
+    -r "https://repo-fastly.voidlinux.org/current/nonfree" \
+    -- -k "us" -T "Void Linux" -o ../build/personal-xorg-prime.iso \
+    -p "void-repo-nonfree" \
+    -p "$drivers $services $utilities $development" \
+    -p "$xorg $audio $bluetooth $fonts $apps" \
+    -e /bin/bash \
+    -I ../headless -I ../xorg -I ../perf -I ../personal \
     -S "dhcpcd cronie tlp iwd bluetoothd dbus polkitd" \
     -C "vconsole.keymap=us nowatchdog live.autologin live.shell=/bin/bash"
 

@@ -40,8 +40,7 @@ logfile="$HOME/.dklog"
 
 	# rules
 	dkcmd rule class="^alacritty$" ws=1 focus=true terminal=true
-	dkcmd rule class="^qutebrowser$" ws=2 focus=true
-	# dkcmd rule class="^firefox$" ws=2 focus=true
+	dkcmd rule class="^firefox$" ws=2 focus=true
 	dkcmd rule class="^zathura$" ws=3 focus=true
 
 	# mouse
@@ -54,5 +53,5 @@ logfile="$HOME/.dklog"
 
 # Startup
 alacritty &
-qutebrowser &
+firefox &
 zathura &

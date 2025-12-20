@@ -1,6 +1,7 @@
 # Specific
 marksman*
 markdown-oxide*
+personal/etc/skel/.local/code/*
 
 # Builds
 *.dll
