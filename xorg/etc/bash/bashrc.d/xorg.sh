@@ -2,7 +2,7 @@
 export COLORTERM="truecolor"
 
 # Browser
-export BROWSER="qutebrowser"
+export BROWSER="firefox"
 
 # Flatpak
 export FLATPATH="$HOME/.flat/" PATH="$PATH:$FLATPATH"

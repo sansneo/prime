@@ -1,10 +1,10 @@
-# fullscreen screenshot (scrot)
-super + z
-    scrot ~/image/screenshot/%Y-%m-%d-%H%M%S.png -e 'xclip -selection clipboard -target image/png -i $f'
-
 # region screenshot (scrot)
-super + shift + z
+super + z
     scrot -s ~/image/screenshot/%Y-%m-%d-%H%M%S.png -e 'xclip -selection clipboard -target image/png -i $f'
+
+# fullscreen screenshot (scrot)
+super + shift + z
+    scrot ~/image/screenshot/%Y-%m-%d-%H%M%S.png -e 'xclip -selection clipboard -target image/png -i $f'
 
 # toggle floating
 super + shift + x

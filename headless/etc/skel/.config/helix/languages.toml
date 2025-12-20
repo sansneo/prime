@@ -1,13 +1,4 @@
 [[language]]
-name = "c"
-roots = [".ccls"]
-auto-format = true
-language-servers = ["ccls"]
-
-[language-server.ccls]
-command = "ccls"
-
-[[language]]
 name = "go"
 roots = ["go.mod"]
 auto-format = true
