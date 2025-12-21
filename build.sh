@@ -156,6 +156,12 @@ flatpak
 "
 apps=$(clean "$apps")
 
+# Personal
+personal="
+nextdns
+"
+personal=$(clean "$personal")
+
 # Are you root?
 if [ "$(id -u)" -ne 0 ]; then echo "Run as root!"; exit 1; fi
 
@@ -227,7 +233,7 @@ cd void-mklive/
     -- -k "us" -T "Void Linux" -o ../build/personal-xorg-prime.iso \
     -p "void-repo-nonfree" \
     -p "$drivers $services $utilities $development" \
-    -p "$xorg $audio $bluetooth $fonts $apps" \
+    -p "$xorg $audio $bluetooth $fonts $apps $personal" \
     -e /bin/bash \
     -I ../headless -I ../xorg -I ../perf -I ../personal \
     -S "dhcpcd cronie tlp iwd bluetoothd dbus polkitd" \
