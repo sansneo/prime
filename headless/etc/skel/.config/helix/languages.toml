@@ -1,4 +1,8 @@
 [[language]]
+name = "c"
+auto-format = true
+
+[[language]]
 name = "go"
 roots = ["go.mod"]
 auto-format = true
