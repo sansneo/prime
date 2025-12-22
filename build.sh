@@ -142,6 +142,7 @@ xautolock
 xwallpaper
 alacritty
 nsxiv
+mpv
 ffmpeg
 zathura
 zathura-cb
