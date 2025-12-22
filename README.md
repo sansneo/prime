@@ -147,7 +147,8 @@ Packages that are not part of the toolset, but are included in headless.
 * xwallpaper: set wallpaper
 * ranger: file manager
 * nsxiv: view images
-* ffmpeg: play (and manipulate) audios and videos
+* mpv: play audios and videos
+* ffmpeg: manipulate audios and videos
 * zathura (supporting pdf, epub, xps, cbz, cbr, cb7 and cbt): read documents
 
 ### Apps
