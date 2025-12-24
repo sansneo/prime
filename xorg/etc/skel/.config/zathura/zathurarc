@@ -17,3 +17,6 @@ map R recolor
 # Rotate
 map > rotate rotate-cw
 map < rotate rotate-ccw
+
+# To the bottom
+map ge scroll bottom

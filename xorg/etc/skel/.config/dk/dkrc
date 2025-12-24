@@ -7,7 +7,7 @@ logfile="$HOME/.dklog"
 { # compound command to redirect all output
 
 	# number of workspaces
-  dkcmd set numws=8
+  dkcmd set numws=5
 
 	# defaulting to the tile layout
 	dkcmd set ws=_ apply layout=tile master=1 stack=3 gap=0 msplit=0.6 ssplit=0.4
@@ -16,7 +16,7 @@ logfile="$HOME/.dklog"
 	dkcmd set \
 		ws=1 name="terminal" \
 		ws=2 name="browser" \
-		ws=3 name="reader" \
+		ws=3 name="record" \
 		ws=4 name="empty"
 
 	# minimum width/height for resizing and minimum allowed on-screen when moving
@@ -35,17 +35,17 @@ logfile="$HOME/.dklog"
 		outer_focus='#4ad66d' \
 		outer_unfocus='#ffffff' \
 
+	# mouse
+	dkcmd set mouse mod=super move=button1 resize=button3
+
 	# focus on mouse enter
 	dkcmd focus_mouse=true
 
 	# rules
 	dkcmd rule class="^alacritty$" ws=1 focus=true terminal=true
-	dkcmd rule class="^firefox$" ws=2 focus=true
-	dkcmd rule class="^zathura$" ws=3 focus=true
-	# dkcmd rule class="^code$" ws=4 focus=true
-
-	# mouse
-	dkcmd set mouse mod=super move=button1 resize=button3
+	dkcmd rule class="^qutebrowser$" ws=2 focus=true
+	dkcmd rule class="^obs$" ws=3 focus=false
+	# dkcmd rule class="^code$" ws=4 focus=false
 
 	# apply current rules
 	dkcmd rule apply '*'
@@ -54,6 +54,6 @@ logfile="$HOME/.dklog"
 
 # Startup
 alacritty &
-firefox &
-zathura &
+qutebrowser &
+obs &
 # code &

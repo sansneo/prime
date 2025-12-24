@@ -1,24 +1,28 @@
 [[language]]
 name = "c"
-auto-format = true
+file-types  = ["c", "h"]
+roots = [".ccls", "Makefile", "CMakeLists.txt"]
+language-servers = ["cc-ls"]
+
+[language-server.cc-ls]
+command = "ccls"
 
 [[language]]
 name = "go"
 roots = ["go.mod"]
-auto-format = true
 language-servers = ["gopls"]
+auto-format = true
 formatter = { command = "goimports" }
 
 [[language]]
 name = "python"
 roots = ["pyproject.toml", "setup.py", "requirements.txt"]
-auto-format = true
 language-servers = ["pylsp"]
 formatter = { command = "yapf" }
 
 [[language]]
 name = "typst"
 roots = ["typst.toml"]
-auto-format = true
 language-servers = ["tinymist"]
+auto-format = true
 formatter = { command = "typstyle" }

@@ -1,4 +1,4 @@
-theme = "focus"
+theme = "vscode"
 
 [editor]
 mouse = false

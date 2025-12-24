@@ -1,6 +1,5 @@
 # Specific
-marksman*
-markdown-oxide*
+headless/etc/skel/.local/bin/*
 personal/etc/skel/.local/code/*
 
 # Builds

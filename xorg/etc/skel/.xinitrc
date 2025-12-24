@@ -3,28 +3,24 @@
 # xrandr --output HDMI-A-0 --set TearFree on
 # xrandr --output eDP --off
 
-# Let the monitor OCD settings handle screen turn off
+# Let your monitor OCD handle things
 # xset -dpms
 # xset s off
 
-# Lock the screen after 20 minutes of inactivity
-# xautolock -time 20 -locker slock &
+# Lock the screen after 60 minutes of inactivity
+# xautolock -time 60 -locker slock &
 
 # Wallpaper
-# xwallpaper --maximize ~/image/dark.png
 xwallpaper --maximize ~/image/light.png
-
-# Keyboard
-# setxkbmap us # Set Xorg keyboard language
-# setxkbmap -option caps:none # Disable CAPSLOCK
+# xwallpaper --maximize ~/image/dark.png
 
 # Mouse
-# xinput set-prop "Logitech M570" "libinput Scrolling Pixel Distance" 30
-# xinput set-prop "Logitech M570" "libinput Accel Speed" 0.5
-# xinput set-prop "Logitech M570" "libinput Accel Profile Enabled" 0, 1, 0
-# xinput set-prop "Logitech M570" "libinput Horizontal Scroll Enabled" 0
-# xinput set-prop "Logitech M570" "libinput Scroll Method Enabled" 0, 0, 1
-# xinput set-prop "Logitech M570" "libinput Button Scrolling Button" 9
+# xinput set-prop "Logitech M570" "libinput Accel Speed" -0.4
+
+# Keyboard
+setxkbmap us # Set Xorg keyboard language
+# setxkbmap -option caps:none # Disable CAPSLOCK
+# setxkbmap -option altwin:swap_alt_win # Swap ALT and SUPER
 
 # Audio
 pipewire &
