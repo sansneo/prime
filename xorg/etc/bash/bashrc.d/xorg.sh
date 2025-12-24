@@ -5,7 +5,10 @@ export COLORTERM="truecolor"
 export BROWSER="firefox"
 
 # Flatpak
-export FLATPATH="$HOME/.flat/" PATH="$PATH:$FLATPATH"
+export FLATPATH="$HOME/.flat/"
+if [[ ":$PATH:" != *":$FLATPATH:"* ]]; then
+    export PATH="$PATH:$FLATPATH"
+fi
 
 # Aliases
 alias xclip="xclip -selection clipboard"
