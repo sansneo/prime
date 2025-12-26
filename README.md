@@ -115,7 +115,7 @@ Pure driver packages are not listed, but are installed as part of the system and
 * diffutils: diff utilities
 * patch: patch source files
 * git and github-cli: version control system
-* protobuf: protocol buffers compiler
+* protobuf: protocol buffers
 
 ### Additional
 Packages that are not part of the toolset, but are included in headless.
@@ -242,13 +242,13 @@ vpm install intel-video-accel intel-media-driver
 
 Use Firefox Sync to do this, so you never have to do it again. It's a pain.
 
-Install the highly curated [bookmarks](./extra/firefox/bookmarks.html) and these extensions:
+Import the highly curated [bookmarks](./extra/firefox/bookmarks.html) and install these extensions:
 * [Bitwarden](https://addons.mozilla.org/en-US/firefox/addon/bitwarden-password-manager)
 * [uBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin)
 * [YouTube Unhook](https://addons.mozilla.org/en-US/firefox/addon/youtube-recommended-videos)
 * [No More Gemini](https://addons.mozilla.org/en-US/firefox/addon/no-more-gemini)
 
-Then add `search.json.mozlz4` to your active profile (find it in `~/.mozilla/firefox`)!
+Then copy `search.json.mozlz4` to your active profile (use `about:profiles` to find the path)!
 
 ### Tips
 You might want to install your `.gitconfig`!
@@ -321,9 +321,11 @@ sudo flatpak install io.github.ryubing.Ryujinx
 You can of course, install everything else you need from the repos or manually!
 
 I'd love a world where I can use [Signal](https://github.com/signalapp) as my platform to text and call with people I care about.  
-It's open source, secure and to the point, sadly, we are not there yet.  
-My Instagram is mostly a face thing, but I use it from time to time and WhatsApp is still installed on my phone.
+It's open source, secure and to the point, sadly, I am not there yet.  
 
+My Instagram is mostly a face thing, but WhatsApp is still installed on my phone.
+
+### Xorg
 Modify `~/.filter` to choose which applications are listed in the filtered launcher.
 
 ## Building
@@ -342,18 +344,17 @@ su
 sh build.sh
 ```
 
-This is will take a while...  
+This will take a while...  
 The resulting files will be available in `build/`.  
 To learn more, take a look at `build.sh` and refer to [void-linux/void-mklive](https://github.com/void-linux/void-mklive).
-
  
 ### Conclusion
 I love my computer! Do you?   
 
 Please, get the fuck out of IT if you are here [for the money](https://geohot.github.io/blog/jekyll/update/2025/09/13/get-out-of-technology.html).  
-Because of the [state of the world](https://www.slickcharts.com/sp500) there's a lot of money to be made here if you actually care about doing something real and
-creating value by making infrastructures and computers better.  
-Personally, I really enjoy everything systems programming, secure backend development and the cloud (this last one is known to be extremely remunerative), so I'll be doing that.  
+Because of the [state of the world](https://www.slickcharts.com/sp500) there's a lot of that to be made here if you actually care about doing something real and
+creating value by making infrastructures and computers better instaed of moving data around.
+Personally, I really enjoy everything systems programming, secure backend development and the cloud (with this last one known to be extremely remunerative), so I'll be doing that.  
 As time passes I look up to legends such as Rob Pike, Russ Cox and George Hotz more and more.  
 I am 22 years old at the time of writing this, in my 30s I'll have a pretty good understanding of my toolset and computers in general, then hopefully,
 in my 40s I'll be able to compare to them.
