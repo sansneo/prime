@@ -140,6 +140,7 @@ scrot
 slock
 xautolock
 xwallpaper
+qmk
 alacritty
 nsxiv
 mpv
