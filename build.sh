@@ -58,7 +58,7 @@ utilities=$(clean "$utilities")
 development="
 base-devel
 gdb
-clang-extra-tools
+clang-tools-extra
 rizin
 rz-ghidra
 ltrace

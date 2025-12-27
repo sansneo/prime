@@ -1,4 +1,4 @@
-# Completion
+# Bindings
 bind 'tab:menu-complete'
 bind '"\e[Z": menu-complete-backward'
 bind '"\C-x": edit-and-execute-command'
