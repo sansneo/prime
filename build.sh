@@ -188,42 +188,42 @@ rm ./vscode.tar.gz
 cd void-mklive/
 
 # Headless
-./mkiso.sh -a x86_64 \
-    -r "https://repo-fastly.voidlinux.org/current" \
-    -r "https://repo-fastly.voidlinux.org/current/nonfree" \
-    -- -k "us" -T "Void Linux" -o ../build/headless-prime.iso \
-    -p "void-repo-nonfree" \
-    -p "$drivers $services $utilities $development" \
-    -e /bin/bash \
-    -I ../headless -I ../safe \
-    -S "dhcpcd cronie tlp iwd" \
-    -C "vconsole.keymap=us nowatchdog live.autologin live.shell=/bin/bash"
+# ./mkiso.sh -a x86_64 \
+#     -r "https://repo-fastly.voidlinux.org/current" \
+#     -r "https://repo-fastly.voidlinux.org/current/nonfree" \
+#     -- -k "us" -T "Void Linux" -o ../build/headless-prime.iso \
+#     -p "void-repo-nonfree" \
+#     -p "$drivers $services $utilities $development" \
+#     -e /bin/bash \
+#     -I ../headless -I ../safe \
+#     -S "dhcpcd cronie tlp iwd" \
+#     -C "vconsole.keymap=us nowatchdog live.autologin live.shell=/bin/bash"
 
 # Safe
-./mkiso.sh -a x86_64 \
-    -r "https://repo-fastly.voidlinux.org/current" \
-    -r "https://repo-fastly.voidlinux.org/current/nonfree" \
-    -- -k "us" -T "Void Linux" -o ../build/safe-xorg-prime.iso \
-    -p "void-repo-nonfree" \
-    -p "$drivers $services $utilities $development" \
-    -p "$xorg $audio $bluetooth $fonts $apps" \
-    -e /bin/bash \
-    -I ../headless -I ../xorg -I ../safe \
-    -S "dhcpcd cronie tlp iwd bluetoothd dbus polkitd" \
-    -C "vconsole.keymap=us nowatchdog live.autologin live.shell=/bin/bash"
+# ./mkiso.sh -a x86_64 \
+#     -r "https://repo-fastly.voidlinux.org/current" \
+#     -r "https://repo-fastly.voidlinux.org/current/nonfree" \
+#     -- -k "us" -T "Void Linux" -o ../build/safe-xorg-prime.iso \
+#     -p "void-repo-nonfree" \
+#     -p "$drivers $services $utilities $development" \
+#     -p "$xorg $audio $bluetooth $fonts $apps" \
+#     -e /bin/bash \
+#     -I ../headless -I ../xorg -I ../safe \
+#     -S "dhcpcd cronie tlp iwd bluetoothd dbus polkitd" \
+#     -C "vconsole.keymap=us nowatchdog live.autologin live.shell=/bin/bash"
 
 # Performance
-./mkiso.sh -a x86_64 \
-    -r "https://repo-fastly.voidlinux.org/current" \
-    -r "https://repo-fastly.voidlinux.org/current/nonfree" \
-    -- -k "us" -T "Void Linux" -o ../build/performance-xorg-prime.iso \
-    -p "void-repo-nonfree" \
-    -p "$drivers $services $utilities $development" \
-    -p "$xorg $audio $bluetooth $fonts $apps" \
-    -e /bin/bash \
-    -I ../headless -I ../xorg -I ../perf \
-    -S "dhcpcd cronie tlp iwd bluetoothd dbus polkitd" \
-    -C "vconsole.keymap=us nowatchdog live.autologin live.shell=/bin/bash"
+# ./mkiso.sh -a x86_64 \
+#     -r "https://repo-fastly.voidlinux.org/current" \
+#     -r "https://repo-fastly.voidlinux.org/current/nonfree" \
+#     -- -k "us" -T "Void Linux" -o ../build/performance-xorg-prime.iso \
+#     -p "void-repo-nonfree" \
+#     -p "$drivers $services $utilities $development" \
+#     -p "$xorg $audio $bluetooth $fonts $apps" \
+#     -e /bin/bash \
+#     -I ../headless -I ../xorg -I ../perf \
+#     -S "dhcpcd cronie tlp iwd bluetoothd dbus polkitd" \
+#     -C "vconsole.keymap=us nowatchdog live.autologin live.shell=/bin/bash"
 
 # Personal
 ./mkiso.sh -a x86_64 \

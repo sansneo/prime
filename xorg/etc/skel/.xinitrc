@@ -15,7 +15,8 @@ xwallpaper --maximize ~/image/light.png
 # xwallpaper --maximize ~/image/dark.png
 
 # Mouse
-# xinput set-prop "Logitech M570" "libinput Accel Speed" -0.4
+# xinput set-prop "Logitech M570" "libinput Accel Speed" 0
+
 
 # Keyboard
 setxkbmap us # Set Xorg keyboard language

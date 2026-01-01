@@ -2,6 +2,8 @@
 config.load_autoconfig(False)
 
 # Behaviour
+## Agent
+c.content.headers.user_agent = "Mozilla/5.0 ({os_info}; rv:130.0) Gecko/20100101 Firefox/130"
 ## Completion
 c.completion.open_categories = ["quickmarks"]
 ## Tabs
@@ -23,6 +25,11 @@ c.messages.timeout = 10
 c.statusbar.widgets = ["progress", "search_match", "tabs", "scroll", "url"]
 c.statusbar.padding = {"bottom": 2, "left": 0, "right": 2, "top": 0}
 c.tabs.position = "top"
+## Modes
+c.input.insert_mode.auto_load = False
+c.input.insert_mode.auto_enter = True
+c.input.insert_mode.auto_leave = False
+c.input.mode_override = "normal"
 ## Bindings
 ### Navigation
 config.bind('ge', 'scroll-to-perc 100')
