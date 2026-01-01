@@ -17,7 +17,8 @@ logfile="$HOME/.dklog"
 		ws=1 name="terminal" \
 		ws=2 name="browser" \
 		ws=3 name="record" \
-		ws=4 name="empty"
+		ws=4 name="main" \
+		ws=5 name="empty"
 
 	# minimum width/height for resizing and minimum allowed on-screen when moving
 	dkcmd set win_minwh=50 win_minxy=10
@@ -45,7 +46,7 @@ logfile="$HOME/.dklog"
 	dkcmd rule class="^alacritty$" ws=1 focus=true terminal=true
 	dkcmd rule class="^qutebrowser$" ws=2 focus=true
 	dkcmd rule class="^obs$" ws=3 focus=false
-	# dkcmd rule class="^code$" ws=4 focus=false
+	dkcmd rule class="^code$" ws=4 focus=false
 
 	# apply current rules
 	dkcmd rule apply '*'
@@ -56,4 +57,4 @@ logfile="$HOME/.dklog"
 alacritty &
 qutebrowser &
 obs &
-# code &
+code &
