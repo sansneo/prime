@@ -1,3 +1,2 @@
 #!/bin/sh
-
 flatpak run com.heroicgameslauncher.hgl

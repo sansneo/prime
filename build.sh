@@ -47,7 +47,6 @@ tmate
 skim
 helix
 xxd
-ranger
 android-tools
 scrcpy
 vpm
@@ -57,8 +56,11 @@ utilities=$(clean "$utilities")
 # Development
 development="
 base-devel
+libsanitizer-devel
+cross-aarch64-linux-gnu
+glibc-devel
 gdb
-clang-extra-tools
+ccls
 rizin
 rz-ghidra
 ltrace
@@ -89,7 +91,6 @@ mesa-vdpau
 mesa-vaapi
 mesa-dri
 libva-utils
-xdg-user-dirs
 gstreamer-vaapi
 gstreamer1
 setxkbmap
@@ -102,6 +103,7 @@ dbus
 elogind
 polkit
 xpadneo
+xdg-user-dirs
 "
 xorg=$(clean "$xorg")
 
@@ -141,15 +143,16 @@ slock
 xautolock
 xwallpaper
 alacritty
+ranger
 nsxiv
 mpv
 ffmpeg
 zathura
 zathura-cb
 zathura-pdf-mupdf
-firefox
+qutebrowser
+python3-adblock
 qbittorrent
-nicotine+
 obs
 obs-plugin-browser-bin
 cutter
@@ -166,12 +169,7 @@ personal=$(clean "$personal")
 # Are you root?
 if [ "$(id -u)" -ne 0 ]; then echo "Run as root!"; exit 1; fi
 
-# Marksman (not available in the repos)
-wget https://github.com/artempyanykh/marksman/releases/latest/download/marksman-linux-x64
-mv marksman-linux-x64 headless/etc/skel/.local/bin/marksman
-chmod +x headless/etc/skel/.local/bin/marksman
-
-# Markdown Oxide (not available in the repos)
+# Pulling Markdown Oxide
 curl -s https://api.github.com/repos/Feel-ix-343/markdown-oxide/releases/latest \
   | grep -oE '"browser_download_url":\s*"[^"]+"' \
   | grep -E 'markdown-oxide-v.*-x86_64-unknown-linux-gnu' \
@@ -181,7 +179,7 @@ curl -s https://api.github.com/repos/Feel-ix-343/markdown-oxide/releases/latest 
 mv markdown-oxide headless/etc/skel/.local/bin
 chmod +x headless/etc/skel/.local/bin/markdown-oxide
 
-# VSCode (proprietary version)
+# Pulling the baddies (proprietary VSCode)
 wget -O vscode.tar.gz "https://code.visualstudio.com/sha/download?build=stable&os=linux-x64"
 tar -xzf ./vscode.tar.gz -C personal/etc/skel/.local/code --strip-components=1
 rm ./vscode.tar.gz

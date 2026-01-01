@@ -1,5 +1,5 @@
 # prime
-> For a masterable, comfy and distraction-free setup
+> For a masterable, comfy and distraction-free setup!
 
 ```
  ______   ______     __     __    __     ______    
@@ -19,14 +19,16 @@ I need a system that:
 Is that you[^4]? Great! Then read the rest.
 
 ## Builds
-There are three builds available based on the latest Void Linux x86_64-glibc.
-* Headless (`headless-prime.iso`), the toolset plus the drivers, (almost) nothing else.
-* Safe (`safe-xorg-prime.iso`), everything headless has plus audio, bluetooth, fonts, everything graphics and various applications.
-* Performance (`performance-xorg-prime.iso`), just like safe, but with insecure kernel boot options for a performance increase up to 20%!
-* Personal (`personal-xorg-prime.iso`), safe with opionionated additions such as VSCode.
+There are four builds available, all of which are based on the latest Void Linux x86_64-glibc.
+* Headless (`headless-prime.iso`), the toolset plus the drivers, almost nothing else.
+* Safe (`safe-xorg-prime.iso`), everything headless has plus audio, bluetooth,  
+fonts, everything graphics and various applications.
+* Performance (`performance-xorg-prime.iso`), just like safe, but using insecure kernel boot  
+options for a performance increase up to 20%!
+* Personal (`personal-xorg-prime.iso`), performance with very opionionated additions such as VSCode.
 
 > [!CAUTION]
-> Using performance your system will be vulnerable to Meltdown and a lot more, but unless there's someone else on your computer doing binary exploitation or process hacking,
+> Your system will be vulnerable to Meltdown and a lot more if you choose to use performance, but unless someone is on your computer doing binary exploitation and process hacking,
 you are probably good.
 
 Let's get into it!
@@ -36,11 +38,14 @@ Packages are (mostly) organized by the following priority order:
 `Kernel > Shell > Userland (non‑network) > Userland (network) > Daemons` and  
 within each priority, grouped by origin: `Linux project > GNU project > Other projects`.
 
-Pure driver packages are not listed, but are installed as part of the system and are very much essential.
+Pure driver packages are not listed, but are installed as part of the system and very much essential.
 
 ### Toolset
 * linux and kmod: kernel and modules
 * dracut: generate initramfs
+* grub: bootloader
+* efibootmgr: manage uefi boot entries
+* os-prober: detect other operating systems
 * runit: init system
 * glibc: libc
 * bash and dash: user and system shell
@@ -78,8 +83,6 @@ Pure driver packages are not listed, but are installed as part of the system and
 * wget: http and ftp download utility
 * yt-dlp: download videos
 * openssh: secure remote shell
-* efibootmgr: manage uefi boot entries
-* os-prober: detect other operating systems
 * acpid: handle acpi events
 * eudev: device manager
 * agetty: manage ttys
@@ -115,7 +118,7 @@ Pure driver packages are not listed, but are installed as part of the system and
 * diffutils: diff utilities
 * patch: patch source files
 * git and github-cli: version control system
-* protobuf: protocol buffers compiler
+* protobuf: protocol buffers
 
 ### Additional
 Packages that are not part of the toolset, but are included in headless.
@@ -152,18 +155,13 @@ Packages that are not part of the toolset, but are included in headless.
 * zathura (supporting pdf, epub, xps, cbz, cbr, cb7 and cbt): read documents
 
 ### Apps
-* firefox: web browser
+* qutebrowser: browser
 * obs: record and live stream
 * qbittorrent: torrent
-* nicotine: soulseek
 * cutter: rizin frontend
 * flatpak: self-contain applications
-  * rustdesk: remote desktop
-  * heroic: play native and windows games using proton
-  * melonds: play nintendo ds games by emulating them
-  * ryujinx: play nintendo switch games by emulating them
 
-In addition to the drivers, language servers, linters, and formatters for some languages are also installed.
+In addition to the drivers, language servers, linters, and formatters some languages are also installed.
 
 ### Documentation
 * [GNU](https://www.gnu.org/manual/manual.html)
@@ -191,6 +189,8 @@ In addition to the drivers, language servers, linters, and formatters for some l
 * [Void](https://voidlinux.org)
 * [Manned](https://manned.org)
 
+Check out the highly curated [quickmarks](./xorg/etc/skel/.config/qutebrowser/quickmarks) for more!
+
 > [!TIP]
 > Offline?
 > Use `man` to access manual pages.  
@@ -204,6 +204,8 @@ Don't use fucking AI[^5] whenever you can't understand something.
 
 Is it supposed to look this pretty?   
 That's not the point, but I'm happy it does!
+
+Check out the [bindings](./KEYBOARD.md)
 
 ## Installation
 1. Boot it up and run `sudo void-installer`, follow the process and done 🎉!  
@@ -236,22 +238,14 @@ vpm install nvidia nvidia-vaapi-driver nvidia-docker
 vpm install intel-video-accel intel-media-driver
 ```
 
-3. Make sure your `.xinitrc` is just the way you want it!
-
-4. Finally, setup your browser.
-
-Use Firefox Sync to do this, so you never have to do it again. It's a pain.
-
-Install the highly curated [bookmarks](./extra/firefox/bookmarks.html) and these extensions:
-* [Bitwarden](https://addons.mozilla.org/en-US/firefox/addon/bitwarden-password-manager)
-* [uBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin)
-* [YouTube Unhook](https://addons.mozilla.org/en-US/firefox/addon/youtube-recommended-videos)
-* [No More Gemini](https://addons.mozilla.org/en-US/firefox/addon/no-more-gemini)
-
-Then add `search.json.mozlz4` to your active profile (find it in `~/.mozilla/firefox`)!
+3. Lastly, make sure your `~/.xinitrc` is just the way you want it!
 
 ### Tips
-You might want to install your `.gitconfig`!
+I recommend giving a shot to [Qutebrowser](SEARCH.md), but if you want to use something Chromium or Firefox based check out the [Bitwarden](https://addons.mozilla.org/en-US/firefox/addon/bitwarden-password-manager),
+[uBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin), [YouTube Unhook](https://addons.mozilla.org/en-US/firefox/addon/youtube-recommended-videos) and
+[No More Gemini](https://addons.mozilla.org/en-US/firefox/addon/no-more-gemini) extensions!
+
+Don't forget to install your `~/.gitconfig` and `~/.ssh` keys!
 ```ini
 [user]
   email = sansneolink@gmail.com
@@ -267,16 +261,16 @@ You might want to install your `.gitconfig`!
 	rebase = true
 ```
 
-Edit `/etc/dhcpcd.conf` to specify your preferred DNS servers (by default, Cloudflare's DNS is used).  
+Edit `/etc/dhcpcd.conf` to specify your preferred DNS servers (by default, Cloudflare's DNS is used).   
 To prevent dhcpcd from overwriting your `/etc/resolv.conf`, uncomment `nohook resolv.conf`.  
 To use your gateway's default DNS server, comment `nooption domain_name_servers` and `nooption rdnss`.
 
-Remove the default Helix themes to declutter the menu and keep only my selection.
+Remove the default Helix themes to keep exlusively my selection.
 ```sh
-sudo rm /usr/lib/helix/runtime/themes*
+sudo rm -r /usr/lib/helix/runtime/themes
 ```
 
-Install goimports (not part of the repositories) for on-format automatic imports with Go.
+Install goimports (not in the repositories) for on-format automatic imports with Go.
 ```sh
 go install golang.org/x/tools/cmd/goimports@latest
 ```
@@ -285,49 +279,35 @@ You can run the `kubectl`, `aws-cli` and `terraform` as Docker containers.
 This requires the containerd and docker services to be running.
 
 ### Flatpaks
-Add the Flathub remote
+To get some, add the Flathub remote
 ```sh
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 ```
-
-For a remote desktop solution
-* RustDesk
+then
 ```sh
-sudo flatpak install com.rustdesk.RustDesk
-```
-
-For playing games (which I rarely do)
-* Heroic
-```sh
+# To install Heroic, for example
 sudo flatpak install com.heroicgameslauncher.hgl
+# Override application permissions
 sudo flatpak override --nofilesystem=~/Games/Heroic com.heroicgameslauncher.hgl
 sudo flatpak override --filesystem=~/games com.heroicgameslauncher.hgl
 ```
-* MelonDS
-```sh
-sudo flatpak install net.kuribo64.melonDS
-```
-* Ryujinx
-```sh
-sudo flatpak install io.github.ryubing.Ryujinx
-```
+
+### Gaming
+* heroic : play native and windows games with proton
+* duckstation: play ps1 games through an emulator
+* xemu: play the original xbox games through an emulator
+* mgba: play nintendo gba games through an emulator
+* melonds: play nintendo ds games through an emulator
+* cemu: play nintendo wiiu games through an emulator
+* ryujinx: play nintendo switch games through an emulator
 
 > [!NOTE]
-> It's super cool that almost every game runs flawlessly with almost no setup required on Linux now.  
+> I don't really play anymore, but it's super cool that almost every game runs flawlessly with no setup required on Linux now.  
 > One limitation is (usually competitive) multiplayer games with kernel level anti-cheats.  
 > Honestly, it might be better this way.  
 > Heroic can install pirated[^6] games by first running Warez scene installers.
 
-You can of course, install everything else you need from the repos or manually!
-
-I'd love a world where I can use [Signal](https://github.com/signalapp) as my platform to text and call with people I care about.  
-It's open source, secure and to the point, sadly, we are not there yet.  
-My Instagram is mostly a face thing, but I use it from time to time and WhatsApp is still installed on my phone.
-
-Modify `~/.filter` to choose which applications are listed in the filtered launcher.
-
 ## Building
-
 > [!WARNING]
 > Do this on a Void Linux with `qemu-user-static`, `curl` and `wget` installed.
 
@@ -342,18 +322,18 @@ su
 sh build.sh
 ```
 
-This is will take a while...  
+This will take a while...  
 The resulting files will be available in `build/`.  
 To learn more, take a look at `build.sh` and refer to [void-linux/void-mklive](https://github.com/void-linux/void-mklive).
-
  
 ### Conclusion
 I love my computer! Do you?   
 
-Please, get the fuck out of IT if you are here [for the money](https://geohot.github.io/blog/jekyll/update/2025/09/13/get-out-of-technology.html).  
-Because of the [state of the world](https://www.slickcharts.com/sp500) there's a lot of money to be made here if you actually care about doing something real and
-creating value by making infrastructures and computers better.  
-Personally, I really enjoy everything systems programming, secure backend development and the cloud (this last one is known to be extremely remunerative), so I'll be doing that.  
+Please, [get the fuck out of technology](https://geohot.github.io/blog/jekyll/update/2025/09/13/get-out-of-technology.html) if you are here for the money.  
+Because of the [state of the world](https://www.slickcharts.com/sp500) there's a lot of that to be made here if you actually care about doing something real and
+creating value by making infrastructures and computers better instead of just moving data around.  
+
+I really enjoy everything systems programming, secure backend development and cloud, so I'll be doing that.  
 As time passes I look up to legends such as Rob Pike, Russ Cox and George Hotz more and more.  
 I am 22 years old at the time of writing this, in my 30s I'll have a pretty good understanding of my toolset and computers in general, then hopefully,
 in my 40s I'll be able to compare to them.
@@ -362,9 +342,15 @@ Thanks to computers, I have the knowledge.
 Thanks to luck, I have the genetics.   
 What's stopping me?  
 
-Life can be beautiful (even if it definitely can feel dark at times), self-improvement is the best and my drive will never stop. I believe in you, dear reader. 
+Life can be beautiful (even if it definitely can feel dark at times), self-improvement is the best and my drive for doing what I do will forever grow.
+I believe in you, dear reader. 
 
 We won't stand for mediocrity.
+
+P.S.
+My Instagram is mostly a face thing and way too distracting for me to actually use.  
+Write me an email or ask me to add you on WhatsApp <3.
+Thanks for reading!
 
 # Footnotes
 [^1]: Yes, this is a Linux kernel with the GNU userspace plus a lot more meaning complexity is gonna be pretty high compared to something like OpenBSD or Plan 9, but I can't

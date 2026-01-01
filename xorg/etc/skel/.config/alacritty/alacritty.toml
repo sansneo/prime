@@ -35,7 +35,7 @@ blink_interval        = 1000
 blink_timeout         = 0
 
 [[hints.enabled]]
-command = "firefox"
+command = "qutebrowser"
 hyperlinks = true
 mouse.enabled = true
 regex = "(ipfs:|ipns:|magnet:|mailto:|gemini://|gopher://|https://|http://|news:|file:|git://|ssh:|ftp://)[^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`\\\\]+"

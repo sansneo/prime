@@ -1,5 +1,0 @@
-CompileFlags:
-  Remove: [-stdlib=libc++]
-  Add: [
-    "-isystem/usr/include",
-  ]

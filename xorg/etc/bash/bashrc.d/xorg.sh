@@ -2,7 +2,7 @@
 export COLORTERM="truecolor"
 
 # Browser
-export BROWSER="firefox"
+export BROWSER="qutebrowser"
 
 # Flatpak
 export FLATPATH="$HOME/.flat/"
@@ -12,3 +12,4 @@ fi
 
 # Aliases
 alias xclip="xclip -selection clipboard"
+alias nsxiv="nsxiv -b"
