@@ -9,6 +9,7 @@ linux-firmware
 linux-headers
 exfat-utils
 ntfs-3g
+jmtpfs
 "
 drivers=$(clean "$drivers")
 
