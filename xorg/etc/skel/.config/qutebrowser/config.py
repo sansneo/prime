@@ -37,6 +37,8 @@ config.bind('<Shift-J>', 'tab-prev')
 config.bind('<Shift-K>', 'tab-next')
 config.bind('gJ', 'tab-move -', mode='normal')
 config.bind('gK', 'tab-move +', mode='normal')
+### Caret
+config.bind('x', 'move-to-next-line', mode='caret')
 ### Passthrough
 config.bind('<Shift-Space>', 'mode-enter passthrough')
 config.bind('<Shift-Space>', 'mode-leave', mode='passthrough')
