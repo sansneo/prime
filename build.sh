@@ -179,10 +179,13 @@ curl -s https://api.github.com/repos/Feel-ix-343/markdown-oxide/releases/latest 
 mv markdown-oxide headless/etc/skel/.local/bin
 chmod +x headless/etc/skel/.local/bin/markdown-oxide
 
-# Pulling the baddies (proprietary VSCode)
+# Pulling the baddies
 wget -O vscode.tar.gz "https://code.visualstudio.com/sha/download?build=stable&os=linux-x64"
 tar -xzf ./vscode.tar.gz -C personal/etc/skel/.local/code --strip-components=1
 rm ./vscode.tar.gz
+
+# Copy design images (to use as default wallpapers)
+cp design/light.png design/dark.png xorg/etc/skel/image/
 
 # Going into void-mklive
 cd void-mklive/

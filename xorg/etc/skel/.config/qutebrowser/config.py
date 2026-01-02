@@ -5,7 +5,7 @@ config.load_autoconfig(False)
 ## Agent
 c.content.headers.user_agent = "Mozilla/5.0 ({os_info}; rv:130.0) Gecko/20100101 Firefox/130"
 ## Completion
-c.completion.open_categories = ["quickmarks"]
+c.completion.open_categories = ["quickmarks", "searchengines"]
 ## Tabs
 c.tabs.wrap = True
 c.tabs.show = "always"
@@ -35,10 +35,11 @@ c.input.mode_override = "normal"
 config.bind('ge', 'scroll-to-perc 100')
 config.bind('<Shift-J>', 'tab-prev')
 config.bind('<Shift-K>', 'tab-next')
+config.bind('gJ', 'tab-move -', mode='normal')
+config.bind('gK', 'tab-move +', mode='normal')
 ### Passthrough
 config.bind('<Shift-Space>', 'mode-enter passthrough')
 config.bind('<Shift-Space>', 'mode-leave', mode='passthrough')
-config.bind('<Escape>', 'mode-leave', mode='passthrough')
 config.bind('<Shift-Escape>', 'nop')
 config.bind('<Ctrl-v>', 'nop')
 
