@@ -199,7 +199,7 @@ Check out the highly curated [quickmarks](./xorg/etc/skel/.config/qutebrowser/qu
 Don't use fucking AI[^5] whenever you can't understand something.
 
 ## Screenshots
-![Concept](./xorg/etc/skel/image/light.png)
+![Concept](./design/light.png)
 ![Alacritty, Tmux and Helix](./design/terminal.png)
 
 Is it supposed to look this pretty?   
