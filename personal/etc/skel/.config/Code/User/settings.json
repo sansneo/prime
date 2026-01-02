@@ -1,6 +1,9 @@
 // My current VSCode settings.json
-// Requires the GitHub Theme extension
-// I like to use the Emacs Minimum Keymap extension to get Readline like bindings
+/*
+		Run these two commands to get the extensions:
+   		code --install-extension jamesyang999.vscode-emacs-minimum
+			code --install-extension github.github-vscode-theme
+*/
 {
 	"editor.fontFamily": "JetBrainsMono",
 	"editor.fontLigatures": false,
@@ -62,7 +65,7 @@
 	// shitty fucking bar
 	"window.customTitleBarVisibility": "never",
 	"window.menuBarVisibility": "compact",
-	"window.menuStyle": "custom"
+	"window.menuStyle": "custom",
 	// the browser to use
 	"workbench.externalBrowser": "firefox"
 }

@@ -12,6 +12,7 @@ Listing here what differs from the defaults and what's undocumented.
 * C-s f, sessionizer.
 * C-s c, new window.
 * C-s x, close window.
+* C-s </>, move window.
 * C-s -, split horizontally.
 * C-s |, split vertically.
 * C-s g, open repository remote in qutebrowser.

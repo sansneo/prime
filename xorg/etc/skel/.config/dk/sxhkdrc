@@ -43,7 +43,7 @@ super + {j,k}
 
 # move window
 super + shift + {j,k}
-	dkcmd win resize {x=-30,y=+30,y=-30,x=+30}
+	dkcmd win resize {y=+30,y=-30}
 
 # resize window
 super + {h,l}
