@@ -19,6 +19,8 @@ fi
 alias ls="ls -gh --group-directories-first --color=always"
 alias l="ls" s="ls" sl="ls" lx="ls" lc="ls"
 alias cp="cp -v" mv="mv -v" rm="rm -v"
+alias mkdir="mkdir -v" rmdir="rmdir -v"
+alias mdkir="mkdir" rmdri="rmdir"
 alias free="free -h" df="df -h" du="du -h"
 alias objdump="objdump -M intel"
 alias grep="grep --color=auto"

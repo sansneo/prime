@@ -4,4 +4,16 @@
 		"key": "ctrl+shift+v",
 		"command": "-markdown.showPreview"
 	},
+	{
+		"key": "ctrl+b",
+		"command": "workbench.action.toggleSidebarVisibility"
+	},
+	{
+		"key": "ctrl+f",
+		"command": "actions.find"
+	},
+	{
+		"key": "ctrl+n",
+		"command": "openEditors.newUntitledFile"
+	}
 ]
