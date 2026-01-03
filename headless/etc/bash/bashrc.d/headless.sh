@@ -3,7 +3,6 @@ stty -ixon
 bind 'set bell-style none'
 
 # Environment
-export PS1='\[\033[31m\]\u\[\033[0m\]@\[\033[34m\]\h \[\033[0m\]\w \[\033[0m\]\$ '
 export EDITOR="hx" VISUAL="$EDITOR"
 
 if [[ ":$PATH:" != *":$HOME/.local/bin:"* ]]; then
