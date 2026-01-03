@@ -48,7 +48,7 @@ super + shift + {j,k}
 # resize window
 super + {h,l}
 	dkcmd win resize {w=-30,w=+30}
-super + Shift + {h,l}
+super + shift + {h,l}
 	dkcmd win resize {w=-60,w=+60}
 
 # toggle borders
