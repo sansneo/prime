@@ -35,6 +35,7 @@ unrar
 openssl
 openssh
 wget
+gallery-dl
 yt-dlp
 curl
 trurl
@@ -71,6 +72,7 @@ delve
 gopls
 protobuf
 python3
+python3-pip
 python3-yapf
 python3-lsp-server
 gleam
