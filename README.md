@@ -304,10 +304,20 @@ sudo flatpak override --filesystem=~/games com.heroicgameslauncher.hgl
 * ryujinx: play nintendo switch games through an emulator
 
 > [!NOTE]
-> I don't really play anymore, but it's super cool that almost every game runs flawlessly with no setup required on Linux now.  
+> I don't really play anymore.  
+> It's super cool that almost every game runs flawlessly with no setup required on Linux now though!  
 > One limitation is (usually competitive) multiplayer games with kernel level anti-cheats.  
-> Honestly, it might be better this way.  
 > Heroic can install pirated[^6] games by first running Warez scene installers.
+
+## Download
+* [Headless](https://drive.google.com/file/d/1wf2pOU8T3UnSwqrMpZjrufrQXYzo4S0O) `2.1GB`  `sha256:3b831c9064617b8aa9a49b1341b1fa77d694448975a79f7ef4fe834c5d2b30fd`
+* [Safe](https://drive.google.com/file/d/14P3DwqPm8DbRmtY7zwEW9gIRMRjv6I-x) `2.9GB` `sha256:173e554562ab76de6726337e17c58f6e3bb80bfd46aff13ad6beeb9dde0a5885`
+* [Perf](https://drive.google.com/file/d/1KO9Jgmd73rqCecM1gbNqpE3Qswzf6Ye1) `2.9GB` `sha256:60953c2a35c1482781a74e8d4befe2f43ef716614821641e0c91ca86602abcef`
+
+Headless's installation size is `6GB`, for the other builds it's `9GB`.  
+These are measured without graphical drivers, as sizes can vary.
+
+Prime uses `~200MB` of memory on idle (`~600MB` with a xorg server running)!
 
 ## Building
 > [!WARNING]
