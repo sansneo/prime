@@ -81,7 +81,8 @@ Pure driver packages are not listed, but are installed as part of the system and
 * traceroute: follow network packets
 * iproute2 and iputils: network utilities
 * wget: http and ftp download utility
-* yt-dlp: download videos
+* gallery-dl: download images from various websites
+* yt-dlp: download videos from various websites
 * openssh: secure remote shell
 * acpid: handle acpi events
 * eudev: device manager
@@ -112,6 +113,7 @@ Pure driver packages are not listed, but are installed as part of the system and
 * go: compiled garbage collected language
   * delve: debugger
 * python: runtime object oriented language
+  * pip: package manager
 * gleam: runtime functional language
 * sqlite: embeddable sql database
 * typst, troff and groff: typesetting
