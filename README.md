@@ -291,7 +291,7 @@ then
 sudo flatpak install com.heroicgameslauncher.hgl
 # Override application permissions
 sudo flatpak override --nofilesystem=~/Games/Heroic com.heroicgameslauncher.hgl
-sudo flatpak override --filesystem=~/games com.heroicgameslauncher.hgl
+sudo flatpak override --filesystem=~/game com.heroicgameslauncher.hgl
 ```
 
 ### Gaming

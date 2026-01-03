@@ -1,9 +1,17 @@
 # Do not load the autoconfig
 config.load_autoconfig(False)
 
-# Behaviour
 ## Agent
-c.content.headers.user_agent = "Mozilla/5.0 ({os_info}; rv:130.0) Gecko/20100101 Firefox/130"
+firefox_ua = 'Mozilla/5.0 ({os_info}; rv:135.0) Gecko/20100101 Firefox/135'
+google_tlds = [
+    'com', 'co.uk', 'de', 'fr', 'it', 'es', 'ca', 'com.au', 
+    'nl', 'co.jp', 'com.br', 'ru', 'co.in', 'com.mx', 'ch',
+    'se', 'no', 'dk', 'fi', 'ie', 'co.nz', 'com.hk', 'sg'
+]
+for tld in google_tlds:
+    config.set('content.headers.user_agent', firefox_ua, f'https://*.google.{tld}/*')
+
+# Behaviour
 ## Completion
 c.completion.open_categories = ["quickmarks", "searchengines"]
 ## Tabs
