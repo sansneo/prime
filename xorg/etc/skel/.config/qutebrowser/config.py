@@ -143,21 +143,22 @@ c.content.blocking.adblock.lists = [
     "https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling/hosts"
 ]
 ## Downloads
-c.downloads.location.prompt = False
+c.downloads.location.prompt = True
 c.downloads.position = "bottom"
 c.downloads.remove_finished = 0
 # Session
 c.auto_save.session = True
-c.url.start_pages = [ "https://github.com/sansneo/prime" ]
+c.url.start_pages = [ "https://google.com" ]
 c.url.default_page = "https://google.com"
 c.url.searchengines = {
-    "DEFAULT": "https://google.com/search?q={}",
+    "DEFAULT": "https://www.google.com/search?q={}&udm=14",
     "translate": "https://translate.google.com/?sl=auto&tl=en&text={}&op=translate",
     "youtube": "https://youtube.com/results?search_query={}",
     "episode": "https://next-episode.net/search?search={}",
     "wikipedia": "https://en.wikipedia.org/wiki/{}",
     "meaning": "https://wordhippo.com/what-is/the-meaning-of-the-word/{}.html",
     "synonym": "https://wordhippo.com/what-is/another-word-for/{}.html",
+    "manned": "https://manned.org/man/?q={}",
     "pkgsite": "https://pkg.go.dev/search?q={}",
     "pypi": "https://pypi.org/search/?q={}",
     "hex": "https://packages.gleam.run/?search={}"

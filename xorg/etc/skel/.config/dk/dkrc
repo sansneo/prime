@@ -12,13 +12,15 @@ logfile="$HOME/.dklog"
 	# defaulting to the tile layout
 	dkcmd set ws=_ apply layout=tile master=1 stack=3 gap=0 msplit=0.6 ssplit=0.4
 
+	# flating on workspace 4
+	dkcmd set ws=4 layout=none
+
 	# workspaces names
 	dkcmd set \
 		ws=1 name="terminal" \
 		ws=2 name="browser" \
 		ws=3 name="record" \
-		ws=4 name="main" \
-		ws=5 name="empty"
+		ws=4 name="float"
 
 	# minimum width/height for resizing and minimum allowed on-screen when moving
 	dkcmd set win_minwh=50 win_minxy=10
@@ -40,13 +42,13 @@ logfile="$HOME/.dklog"
 	dkcmd set mouse mod=super move=button1 resize=button3
 
 	# focus on mouse enter
-	dkcmd focus_mouse=true
+	dkcmd focus_mouse=false
 
 	# rules
-	dkcmd rule class="^alacritty$" ws=1 focus=true terminal=true
-	dkcmd rule class="^qutebrowser$" ws=2 focus=true
-	dkcmd rule class="^obs$" ws=3 focus=false
-	dkcmd rule class="^code$" ws=4 focus=false
+	# dkcmd rule class="^alacritty$" ws=1 focus=true terminal=true
+	# dkcmd rule class="^qutebrowser$" ws=2 focus=true
+	# dkcmd rule class="^code$" ws=3 focus=false
+	# dkcmd rule class="^obs$" ws=4 focus=false
 
 	# apply current rules
 	dkcmd rule apply '*'
@@ -54,7 +56,7 @@ logfile="$HOME/.dklog"
 } >> "$logfile" 2>&1
 
 # Startup
-alacritty &
-qutebrowser &
-obs &
-code &
+# alacritty &
+# qutebrowser &
+# obs &
+# code &

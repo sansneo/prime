@@ -4,7 +4,7 @@ Open the Qutebrowser search bar with O/xO then
 * Translator: try `translate cane gigante`
 * YouTube: try `youtube sylvan franklin`
 * Next Episode: try `episode pluribus`
-* Wikipedia: try `wikipedia calisthenics`
+* Wikipedia: try `wikipedia gym`
 * WordHippo Meaning: try `meaning hatred`
 * WordHippo Synonym: try `synonym caring`
 * Pkgsite: try `pkgsite chi`

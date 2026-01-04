@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Anti-Brainrot YouTube
 // @namespace    https://example.com
-// @version      1.3
-// @description  Hides left sidebar top Buttons, player Recommendations and Shorts!
+// @version      1.0
+// @description  Hides various YouTube discrating features.
 // @match        https://www.youtube.com/*
 // @match        https://youtube.com/*
 // @grant        none
@@ -11,16 +11,15 @@
 (function() {
     'use strict';
     const hideElements = () => {
-        // Hide Home in sidebar
+        // Hide the Home button in the sidebar
         document.querySelectorAll(
             'a[title="Home"], ytd-mini-guide-entry-renderer[aria-label="Home"]'
         ).forEach(el => el.style.display = 'none');
-        // Hide Shorts in sidebar
+        // Hide the Shorts button in the sidebar
         document.querySelectorAll(
             'a[title="Shorts"], ytd-mini-guide-entry-renderer[aria-label="Shorts"]'
         ).forEach(el => el.style.display = 'none');
-        // Hide right-side recommendations next to videos
-        // This is the safe element that contains the recommended list
+        // Hide recommendations next to videos
         document.querySelectorAll(
             'ytd-watch-next-secondary-results-renderer'
         ).forEach(el => el.style.display = 'none');
@@ -29,9 +28,7 @@
             '#secondary-inner #related'
         ).forEach(el => el.style.display = 'none');
     };
-
     hideElements();
-
     new MutationObserver(hideElements).observe(document.body, {
         childList: true,
         subtree: true

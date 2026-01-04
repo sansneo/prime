@@ -1,16 +1,18 @@
-# screenshot
+# area screenshot
 super + shift + z
     scrot -s ~/image/screenshot/%Y-%m-%d-%H%M%S.png -e 'xclip -selection clipboard -target image/png -i $f'
-super + z
+
+# fullscreen screenshot
+super + shift + x
     scrot ~/image/screenshot/%Y-%m-%d-%H%M%S.png -e 'xclip -selection clipboard -target image/png -i $f'
 
 # lock screen
 super + shift + c
 	slock
 
-# toggle floating window
-super + shift + x
-	dkcmd win float
+# toggle fullscreen
+super + {_,shift} + f
+	dkcmd win {full,full}
 
 # launcher
 super + space
@@ -23,16 +25,18 @@ super + {q,e}
 	dkcmd mon view {prev,next}
 
 # workspace
-super + {a,s,d,w}
-	dkcmd ws view {1-3,5}
-super + Tab
-	current_ws=$(timeout 0.1s dkcmd status type=ws | jq -r '.workspaces[] | select(.focused == true) | .number') && \
-	if [ -n "$current_ws" ] && [ "$current_ws" -eq 4 ]; then \
-		dkcmd ws last; \
-	else \
-		dkcmd ws view 4; \
-	fi
+super + {_,shift + ,ctrl + }{a,s,d}
+	dkcmd set border width=4 ; \
+	dkcmd ws {view,send,follow} {1-3} ; \
+	dkcmd set mouse mod=super move=button3 resize=buttonx ; \
+	xwallpaper --maximize ~/image/light.png
 
+super + {_,shift + ,ctrl + }w
+	dkcmd set border width=1 ; \
+	dkcmd ws {view,send,follow} 4 ; \
+	dkcmd set mouse mod=super move=button1 resize=button3 ; \
+	xwallpaper --maximize ~/image/dark.png
+	
 # kill window
 super + BackSpace
 	dkcmd win kill
@@ -42,18 +46,24 @@ super + {j,k}
 	dkcmd win focus {next,prev}
 
 # move window
-super + shift + {j,k}
-	dkcmd win resize {y=+30,y=-30}
+super + shift + {h,l,j,k}
+	dkcmd win resize {x=-30,x=+30,y=+30,y=-30}
 
 # resize window
-super + {h,l}
-	dkcmd win resize {w=-30,w=+30}
-super + shift + {h,l}
-	dkcmd win resize {w=-60,w=+60}
+super + ctrl + {h,l,j,k}
+	dkcmd win resize {w=-30,w=+30,h=+30,h=-30}
+
+# last window
+# cycle windows
+super + {_,shift} + Tab
+	dkcmd win focus {next,prev}
 
 # toggle borders
 super + {less,greater}
-	dkcmd set border width={4,0}
+	ws=$(timeout 0.1s dkcmd status type=ws | jq -r '.workspaces[] | select(.focused == true) | .number') && \
+	if [ -n "$ws" ] && [ "$ws" -ne 4 ]; then \
+		dkcmd set border width={4,0}; \
+	fi
 
 # reload bindings (sxhkd)
 super + r

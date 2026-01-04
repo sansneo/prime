@@ -9,7 +9,6 @@ linux-firmware
 linux-headers
 exfat-utils
 ntfs-3g
-jmtpfs
 "
 drivers=$(clean "$drivers")
 
@@ -17,7 +16,6 @@ drivers=$(clean "$drivers")
 services="
 iwd
 tlp
-tlp-rdw
 cronie
 docker
 docker-buildx
@@ -51,6 +49,7 @@ helix
 xxd
 android-tools
 scrcpy
+xtools
 vpm
 "
 utilities=$(clean "$utilities")
@@ -58,9 +57,8 @@ utilities=$(clean "$utilities")
 # Development
 development="
 base-devel
-libsanitizer-devel
-cross-aarch64-linux-gnu
 glibc-devel
+libsanitizer-devel
 gdb
 ccls
 rizin
@@ -96,6 +94,8 @@ mesa-dri
 libva-utils
 gstreamer-vaapi
 gstreamer1
+xpadneo
+xdg-user-dirs
 setxkbmap
 xclip
 xinput
@@ -105,8 +105,6 @@ xset
 dbus
 elogind
 polkit
-xpadneo
-xdg-user-dirs
 "
 xorg=$(clean "$xorg")
 
@@ -158,14 +156,15 @@ python3-adblock
 qbittorrent
 obs
 obs-plugin-browser-bin
+v4l2loopback
 cutter
-flatpak
 "
 apps=$(clean "$apps")
 
 # Personal
 personal="
 nextdns
+firefox
 "
 personal=$(clean "$personal")
 
@@ -182,12 +181,69 @@ curl -s https://api.github.com/repos/Feel-ix-343/markdown-oxide/releases/latest 
 mv markdown-oxide headless/etc/skel/.local/bin
 chmod +x headless/etc/skel/.local/bin/markdown-oxide
 
-# Pulling the baddies
+# Pulling VSCode
 wget -O vscode.tar.gz "https://code.visualstudio.com/sha/download?build=stable&os=linux-x64"
 tar -xzf ./vscode.tar.gz -C personal/etc/skel/.local/code --strip-components=1
 rm ./vscode.tar.gz
 
-# Copy design images (to use as default wallpapers)
+# Pulling Heroic
+curl -s https://api.github.com/repos/Heroic-Games-Launcher/HeroicGamesLauncher/releases/latest \
+  | grep -oE '"browser_download_url":\s*"[^"]+"' \
+  | grep -E 'Heroic-.*-linux-x86_64\.AppImage' \
+  | head -n1 \
+  | cut -d '"' -f 4 \
+  | xargs -r wget -O heroic
+chmod +x heroic
+mv heroic gaming/etc/skel/.local/bin
+
+# Pulling mGBA
+curl -s https://api.github.com/repos/mgba-emu/mgba/releases/latest \
+  | grep -oE '"browser_download_url":\s*"[^"]+"' \
+  | grep -E 'mGBA-.*-appimage-x64\.AppImage' \
+  | head -n1 \
+  | cut -d '"' -f 4 \
+  | xargs -r wget -O mgba
+chmod +x mgba
+mv mgba gaming/etc/skel/.local/bin
+
+# Pulling MelonDS
+curl -s https://api.github.com/repos/melonDS-emu/melonDS/releases/latest \
+  | grep -oE '"browser_download_url":\s*"[^"]+"' \
+  | grep -E 'melonDS-.*-appimage-x86_64\.zip' \
+  | head -n1 \
+  | cut -d '"' -f 4 \
+  | xargs -r wget -O melonDS.zip
+unzip melonDS.zip && rm melonDS.zip
+mv melonDS-x86_64.AppImage melonds
+chmod +x melonds
+mv melonds gaming/etc/skel/.local/bin
+
+# Pulling Dolphin
+curl -s -L "https://api.github.com/repos/pkgforge-dev/Dolphin-emu-AppImage/releases/latest" \
+  | grep -oE '"browser_download_url":\s*"[^"]+"' \
+  | grep -E 'Dolphin_Emulator-.*-anylinux\.squashfs-x86_64\.AppImage' \
+  | head -n1 \
+  | cut -d '"' -f 4 \
+  | xargs -r wget -O dolphin
+chmod +x dolphin
+mv dolphin gaming/etc/skel/.local/bin
+
+# Pulling Cemu
+curl -s https://api.github.com/repos/cemu-project/Cemu/releases/latest \
+  | grep -oE '"browser_download_url":\s*"[^"]+\.AppImage"' \
+  | head -n1 \
+  | cut -d '"' -f 4 \
+  | xargs -r wget -O cemu
+chmod +x cemu
+mv cemu gaming/etc/skel/.local/bin
+
+# Pulling Ryujinx (I am not familiar with GitLab's API)
+# AppImages can auto-update, but I'll manually make sure we are on the latest release every time
+wget https://git.ryujinx.app/api/v4/projects/1/packages/generic/Ryubing/1.3.3/ryujinx-1.3.3-x64.AppImage -O ryujinx
+chmod +x ryujinx
+mv ryujinx gaming/etc/skel/.local/bin
+
+# Copy design images (to use as wallpapers)
 cp design/light.png design/dark.png xorg/etc/skel/image/
 
 # Going into void-mklive
@@ -205,11 +261,11 @@ cd void-mklive/
     -S "dhcpcd cronie tlp iwd" \
     -C "vconsole.keymap=us nowatchdog live.autologin live.shell=/bin/bash"
 
-# Safe
+# Xorg
 ./mkiso.sh -a x86_64 \
     -r "https://repo-fastly.voidlinux.org/current" \
     -r "https://repo-fastly.voidlinux.org/current/nonfree" \
-    -- -k "us" -T "Void Linux" -o ../build/safe-xorg-prime.iso \
+    -- -k "us" -T "Void Linux" -o ../build/xorg-prime.iso \
     -p "void-repo-nonfree" \
     -p "$drivers $services $utilities $development" \
     -p "$xorg $audio $bluetooth $fonts $apps" \
@@ -218,7 +274,7 @@ cd void-mklive/
     -S "dhcpcd cronie tlp iwd bluetoothd dbus polkitd" \
     -C "vconsole.keymap=us nowatchdog live.autologin live.shell=/bin/bash"
 
-# Performance
+# Gaming
 ./mkiso.sh -a x86_64 \
     -r "https://repo-fastly.voidlinux.org/current" \
     -r "https://repo-fastly.voidlinux.org/current/nonfree" \
@@ -227,7 +283,7 @@ cd void-mklive/
     -p "$drivers $services $utilities $development" \
     -p "$xorg $audio $bluetooth $fonts $apps" \
     -e /bin/bash \
-    -I ../headless -I ../xorg -I ../perf \
+    -I ../headless -I ../xorg -I ../perf -I ../gaming \
     -S "dhcpcd cronie tlp iwd bluetoothd dbus polkitd" \
     -C "vconsole.keymap=us nowatchdog live.autologin live.shell=/bin/bash"
 
@@ -240,7 +296,7 @@ cd void-mklive/
     -p "$drivers $services $utilities $development" \
     -p "$xorg $audio $bluetooth $fonts $apps $personal" \
     -e /bin/bash \
-    -I ../headless -I ../xorg -I ../perf -I ../personal \
+    -I ../headless -I ../xorg -I ../safe -I ../personal \
     -S "dhcpcd cronie tlp iwd bluetoothd dbus polkitd" \
     -C "vconsole.keymap=us nowatchdog live.autologin live.shell=/bin/bash"
 

@@ -12,7 +12,7 @@
 
 I need a system that:  
 * Gets me to my goals (passing exams, shipping and excelling at my craft over time).
-* Is minimal[^1] (and kind of elitist) with a well defined and effective toolset.
+* Is minimal[^1] (kind of elitist) with an effective and coherent toolset.
 * Has low overhead once it clicks and builds little fatigue while using it[^2].
 * Takes no time installing, can be[^3] secure and has no big corpo telemetry.
 
@@ -21,14 +21,14 @@ Is that you[^4]? Great! Then read the rest.
 ## Builds
 There are four builds available, all of which are based on the latest Void Linux x86_64-glibc.
 * Headless (`headless-prime.iso`), the toolset plus the drivers, almost nothing else.
-* Safe (`safe-xorg-prime.iso`), everything headless has plus audio, bluetooth,  
-fonts, everything graphics and various applications.
-* Performance (`performance-xorg-prime.iso`), just like safe, but using insecure kernel boot  
-options for a performance increase up to 20%!
-* Personal (`personal-xorg-prime.iso`), performance with very opionionated additions such as VSCode.
+* Xorg (`xorg-prime.iso`), everything headless has plus audio, bluetooth,  
+fonts, graphics and various applications.
+* Gaming (`gaming-prime-iso`), same as xorg, but using insecure kernel boot  
+options (for a performance increase up to 20%) and shipped with Heroic and various game console emulators!
+* Personal (`personal-prime.iso`), same as xorg plus highly opinionated additions such as VSCode.
 
 > [!CAUTION]
-> Your system will be vulnerable to Meltdown and a lot more if you choose to use performance, but unless someone is on your computer doing binary exploitation and process hacking,
+> Your system will be vulnerable to Meltdown and a lot more if you choose to use insecure boot options, but unless someone is on your computer doing binary exploitation and process hacking,
 you are probably good.
 
 Let's get into it!
@@ -125,7 +125,7 @@ Pure driver packages are not listed, but are installed as part of the system and
 ### Additional
 Packages that are not part of the toolset, but are included in headless.
 * kbd: keyboard utilities (ttys)
-* gettext: localization utilities
+* gettext: localization
 * bc: basic calculator
 * ed: standard editor
 * nvi: visual editor
@@ -161,7 +161,6 @@ Packages that are not part of the toolset, but are included in headless.
 * obs: record and live stream
 * qbittorrent: torrent
 * cutter: rizin frontend
-* flatpak: self-contain applications
 
 In addition to the drivers, language servers, linters, and formatters some languages are also installed.
 
@@ -189,14 +188,13 @@ In addition to the drivers, language servers, linters, and formatters some langu
 * [Pulumi](https://www.pulumi.com)
 * [Grafana](https://grafana.com)
 * [Void](https://voidlinux.org)
-* [Manned](https://manned.org)
 
 Check out the highly curated [quickmarks](./xorg/etc/skel/.config/qutebrowser/quickmarks) for more!
 
 > [!TIP]
 > Offline?
 > Use `man` to access manual pages.  
-> Use `info` to access GNU documentation system.
+> Use `info` to access the GNU documentation system.
 
 Don't use fucking AI[^5] whenever you can't understand something.
 
@@ -207,7 +205,7 @@ Don't use fucking AI[^5] whenever you can't understand something.
 Is it supposed to look this pretty?   
 That's not the point, but I'm happy it does!
 
-Check out the [bindings](./KEYBOARD.md)
+Learn how to use [Prime](./TUTORIAL.md)
 
 ## Installation
 1. Boot it up and run `sudo void-installer`, follow the process and done 🎉!  
@@ -243,7 +241,7 @@ vpm install intel-video-accel intel-media-driver
 3. Lastly, make sure your `~/.xinitrc` is just the way you want it!
 
 ### Tips
-I recommend giving a shot to [Qutebrowser](SEARCH.md), but if you want to use something Chromium or Firefox based check out the [Bitwarden](https://addons.mozilla.org/en-US/firefox/addon/bitwarden-password-manager),
+I recommend giving a shot to [Qutebrowser](SEARCH.md), but if you need to use something[^6] Chromium or Firefox based check out the [Bitwarden](https://addons.mozilla.org/en-US/firefox/addon/bitwarden-password-manager),
 [uBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin), [YouTube Unhook](https://addons.mozilla.org/en-US/firefox/addon/youtube-recommended-videos) and
 [No More Gemini](https://addons.mozilla.org/en-US/firefox/addon/no-more-gemini) extensions!
 
@@ -280,34 +278,19 @@ go install golang.org/x/tools/cmd/goimports@latest
 You can run the `kubectl`, `aws-cli` and `terraform` as Docker containers.  
 This requires the containerd and docker services to be running.
 
-### Flatpaks
-To get some, add the Flathub remote
-```sh
-sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-```
-then
-```sh
-# To install Heroic, for example
-sudo flatpak install com.heroicgameslauncher.hgl
-# Override application permissions
-sudo flatpak override --nofilesystem=~/Games/Heroic com.heroicgameslauncher.hgl
-sudo flatpak override --filesystem=~/game com.heroicgameslauncher.hgl
-```
-
 ### Gaming
-* heroic : play native and windows games with proton
-* duckstation: play ps1 games through an emulator
-* xemu: play the original xbox games through an emulator
+The homonymous build comes with these installed:
+* heroic : play native and windows (with proton) games
 * mgba: play nintendo gba games through an emulator
 * melonds: play nintendo ds games through an emulator
-* cemu: play nintendo wiiu games through an emulator
+* dolphin: play nintendo wii games through an emulator
+* cemu: play nintendo wii u games through an emulator
 * ryujinx: play nintendo switch games through an emulator
 
 > [!NOTE]
-> I don't really play anymore.  
-> It's super cool that almost every game runs flawlessly with no setup required on Linux now though!  
+> I don't really play anymore, but it's super cool that almost every game runs flawlessly with no setup required on Linux now!  
 > One limitation is (usually competitive) multiplayer games with kernel level anti-cheats.  
-> Heroic can install pirated[^6] games by first running Warez scene installers.
+> Heroic can install pirated[^7] games by first running Warez scene installers.
 
 ## Download
 * [Headless](https://drive.google.com/file/d/1wf2pOU8T3UnSwqrMpZjrufrQXYzo4S0O) `2.1GB`  `sha256:3b831c9064617b8aa9a49b1341b1fa77d694448975a79f7ef4fe834c5d2b30fd`
@@ -319,12 +302,16 @@ These are measured without graphical drivers, as sizes can vary.
 
 Prime uses `~200MB` of memory on idle (`~600MB` with a xorg server running)!
 
+This build is from `commit:hash`.  
+Would be nice to have CI/CD, but that costs money.
+
 ## Building
 > [!WARNING]
-> Do this on a Void Linux with `qemu-user-static`, `curl` and `wget` installed.
+> Do this on a Void Linux with `qemu-user-static`, `unzip`, `curl` and `wget` installed.
 
 1. Clone the repo
-``` git clone https://github.com/sansneo/prime
+```
+git clone https://github.com/sansneo/prime
 cd prime
 git submodule update --init --remote
 ```
@@ -381,7 +368,9 @@ compromise on functionality and focusing on the toolset alone, it's really not t
 [^5]: Come on, really? Up until AIs can write a complete authentication API that's not vulnerable to BOLA, CSRF or anything else in the API OWASP TOP-10
 I will use it very rarely and ask questions I know are common knowledge, it does not work for anything really niche and overly specific, at least for now.
 
-[^6]: In a world where so many companies do not care about quality of product as compared to the monetary game, you need to use like 7 different
+[^6]: The GTK default file picker thing is so fucking bad, just live with it.
+
+[^7]: In a world where so many companies do not care about quality of product as compared to the monetary game, you need to use like 7 different
   subscription based streaming platforms to watch a whole show and AAA game studios often shit out low effort games at full price, I believe it's totally fair to pirate things.
   Keep a list of the media you love, shows, games and music you didn't pay for (knowledge shouldn't be paywalled and there's great value there), then give back once rich.  
   Counter argument, what if everyone does this? Most people are just not technical enough, be grateful you are and enjoy!
