@@ -143,7 +143,7 @@ c.content.blocking.adblock.lists = [
     "https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling/hosts"
 ]
 ## Downloads
-c.downloads.location.prompt = False
+c.downloads.location.prompt = True
 c.downloads.position = "bottom"
 c.downloads.remove_finished = 0
 # Session
