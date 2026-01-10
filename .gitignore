@@ -1,6 +1,13 @@
 # Specific
 headless/etc/skel/.local/bin/*
 personal/etc/skel/.local/code/*
+gaming/etc/skel/.local/bin/*
+/heroic
+/mgba
+/melonds
+/dolphin
+/cemu
+/ryujinx
 
 # Builds
 *.dll

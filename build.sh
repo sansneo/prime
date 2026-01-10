@@ -208,12 +208,12 @@ mv heroic gaming/etc/skel/.local/bin
 # Pulling mGBA
 curl -s https://api.github.com/repos/mgba-emu/mgba/releases/latest \
   | grep -oE '"browser_download_url":\s*"[^"]+"' \
-  | grep -E 'mGBA-.*-appimage-x64\.AppImage' \
+  | grep -i 'mGBA-.*-appimage-x64\.appimage' \
   | head -n1 \
   | cut -d '"' -f 4 \
-  | xargs -r wget -O mgba
+  | xargs wget -O mgba
 chmod +x mgba
-mv mgba gaming/etc/skel/.local/bin
+mv mgba gaming/etc/skel/.local/bin/
 
 # Pulling MelonDS
 curl -s https://api.github.com/repos/melonDS-emu/melonDS/releases/latest \
@@ -287,7 +287,7 @@ cd void-mklive/
 ./mkiso.sh -a x86_64 \
     -r "https://repo-fastly.voidlinux.org/current" \
     -r "https://repo-fastly.voidlinux.org/current/nonfree" \
-    -- -k "us" -T "Void Linux" -o ../build/performance-xorg-prime.iso \
+    -- -k "us" -T "Void Linux" -o ../build/gaming-prime.iso \
     -p "void-repo-nonfree" \
     -p "$drivers $services $utilities $development" \
     -p "$xorg $audio $bluetooth $fonts $apps $gaming" \
@@ -300,7 +300,7 @@ cd void-mklive/
 ./mkiso.sh -a x86_64 \
     -r "https://repo-fastly.voidlinux.org/current" \
     -r "https://repo-fastly.voidlinux.org/current/nonfree" \
-    -- -k "us" -T "Void Linux" -o ../build/personal-xorg-prime.iso \
+    -- -k "us" -T "Void Linux" -o ../build/personal-prime.iso \
     -p "void-repo-nonfree" \
     -p "$drivers $services $utilities $development" \
     -p "$xorg $audio $bluetooth $fonts $apps $personal" \
