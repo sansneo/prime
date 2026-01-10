@@ -25,10 +25,10 @@ There are four builds available, all of which are based on the latest Void Linux
 fonts, graphics and various applications.
 * Gaming (`gaming-prime-iso`), same as xorg, but with insecure kernel boot  
 options (for a performance increase up to 20%), Heroic and various emulators.
-* Personal (`personal-prime.iso`), same as xorg plus highly opinionated additions such as NextDNS and VSCode.
+* Personal (`personal-prime.iso`), same as xorg plus highly opinionated additions such as VSCode.
 
 > [!CAUTION]
-> Your system will be vulnerable to Meltdown and a lot more if you choose to use insecure boot options, but unless someone is on your computer having fun binary exploitation and process hacking,
+> Your system will be vulnerable to Meltdown and a lot more if you choose to use insecure boot options, but unless someone is on your computer having fun with process hacking,
 you are probably good.
 
 Let's get into it!
@@ -165,7 +165,7 @@ Packages that are not part of the toolset, but are included in headless.
 
 In addition to the drivers, language servers, linters, and formatters some languages are also installed.
 
-### Documentation
+## Documentation
 * [GNU](https://www.gnu.org/manual/manual.html)
 * [Linux](https://kernel.org)
 * [Helix](https://helix-editor.com)
@@ -212,7 +212,7 @@ That's not the point, but I'm happy it does!
 You know how to partition and where to mount stuff, you are a big boy/girl.
 
 > [!TIP]
-> Make sure to pick the services and groups you want!
+> Make sure to pick the services and groups you want!  
 > Enable both iwd and wpa_supplicant if you need Wi-Fi!
 
 2. Now log into your new system and get the remaining drivers.
@@ -242,8 +242,12 @@ vpm install intel-video-accel intel-media-driver
 3. Lastly, make sure your `~/.xinitrc` is just the way you want it!
 
 ### Tips
-I recommend giving a shot to Qutebrowser, but Chromium is also installed, check out [uBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin) and
-[YouTube Unhook](https://addons.mozilla.org/en-US/firefox/addon/youtube-recommended-videos) if you use that!
+Prime comes with Qutebrowser and Chromium installed.
+
+To preserve your mental health while browsing the modern internet try using a network-wide DNS adblocker such as [NextDNS](https://nextdns.io) if you decide to use Qutebrowser.
+
+Use [uBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin) and [YouTube Unhook](https://addons.mozilla.org/en-US/firefox/addon/youtube-recommended-videos)
+on Chromium to achive the same.
 
 Don't forget to install your `~/.gitconfig` and `~/.ssh` keys!
 ```ini
@@ -265,8 +269,6 @@ Edit `/etc/dhcpcd.conf` to specify your preferred DNS servers (by default, Cloud
 To prevent dhcpcd from overwriting your `/etc/resolv.conf`, uncomment `nohook resolv.conf`.  
 To use your gateway's default DNS server, comment `nooption domain_name_servers` and `nooption rdnss`.
 
-I highly recommend NextDNS or BlockyDNS as network-wide adblockers.
-
 Remove the default Helix themes to keep exlusively my selection.
 ```sh
 sudo rm -r /usr/lib/helix/runtime/themes
@@ -279,9 +281,6 @@ go install golang.org/x/tools/cmd/goimports@latest
 
 You can run the `kubectl`, `aws-cli` and `terraform` as Docker containers.  
 This requires the containerd and docker services to be running.
-
-Additionally:
-* [Searching on Qutebrowser](./SEARCH.md)
 
 ### Gaming
 The homonymous build comes with these installed:
