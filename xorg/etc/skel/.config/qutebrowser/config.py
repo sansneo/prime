@@ -48,8 +48,8 @@ config.bind('gK', 'tab-move +', mode='normal')
 ### Caret
 config.bind('x', 'move-to-next-line', mode='caret')
 ### Passthrough
-config.bind('<Shift-Space>', 'mode-enter passthrough')
-config.bind('<Shift-Space>', 'mode-leave', mode='passthrough')
+config.bind('<Ctrl-Space>', 'mode-enter passthrough')
+config.bind('<Ctrl-Space>', 'mode-leave', mode='passthrough')
 config.bind('<Shift-Escape>', 'nop')
 config.bind('<Ctrl-v>', 'nop')
 
@@ -136,12 +136,13 @@ c.content.javascript.enabled = True
 c.content.javascript.clipboard = "access-paste"
 c.colors.webpage.preferred_color_scheme = "dark"
 ## Blocking
-c.content.blocking.method = "both"
-c.content.blocking.adblock.lists = [
-    "https://easylist.to/easylist/easylist.txt",
-    "https://easylist.to/easylist/easyprivacy.txt",
-    "https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling/hosts"
-]
+c.content.blocking.method = "hosts"
+c.content.blocking.hosts.lists = [
+    "https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt",
+    "https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling/hosts",
+    "https://raw.githubusercontent.com/easylist/easylist/gh-pages/fanboy-annoyance.txt",
+    "https://raw.githubusercontent.com/AdAway/adaway.github.io/master/hosts.txt"
+    ]
 ## Downloads
 c.downloads.location.prompt = True
 c.downloads.position = "bottom"

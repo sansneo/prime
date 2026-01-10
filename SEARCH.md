@@ -1,5 +1,5 @@
 # Search
-Open the Qutebrowser search bar with O/xO then
+Open Qutebrowser's search bar with O/xO then
 * Google: try `beej's guide on C`
 * Translator: try `translate cane gigante`
 * YouTube: try `youtube sylvan franklin`

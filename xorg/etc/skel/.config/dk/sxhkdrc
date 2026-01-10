@@ -10,10 +10,6 @@ super + shift + x
 super + shift + c
 	slock
 
-# toggle fullscreen
-super + {_,shift} + f
-	dkcmd win {full,full}
-
 # launcher
 super + space
 	dmenu_run -i -p "Run > " -nb '#000000' -nf '#ffffff' -sb '#4ad66d' -sf '#000000' -fn 'JetBrainsMono:size=14:extrabold'
@@ -26,7 +22,7 @@ super + {q,e}
 
 # workspace
 super + {_,shift + ,ctrl + }{a,s,d}
-	dkcmd set border width=4 ; \
+	dkcmd set border width=0 ; \
 	dkcmd ws {view,send,follow} {1-3} ; \
 	dkcmd set mouse mod=super move=button3 resize=buttonx ; \
 	xwallpaper --maximize ~/image/light.png
@@ -53,17 +49,13 @@ super + shift + {h,l,j,k}
 super + ctrl + {h,l,j,k}
 	dkcmd win resize {w=-30,w=+30,h=+30,h=-30}
 
-# last window
-# cycle windows
+# toggle fullscreen
 super + {_,shift} + Tab
-	dkcmd win focus {next,prev}
+	dkcmd win full
 
 # toggle borders
 super + {less,greater}
-	ws=$(timeout 0.1s dkcmd status type=ws | jq -r '.workspaces[] | select(.focused == true) | .number') && \
-	if [ -n "$ws" ] && [ "$ws" -ne 4 ]; then \
-		dkcmd set border width={4,0}; \
-	fi
+	dkcmd set border width={1,0}; \
 
 # reload bindings (sxhkd)
 super + r

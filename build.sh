@@ -146,6 +146,7 @@ xwallpaper
 alacritty
 ranger
 nsxiv
+kew
 mpv
 ffmpeg
 zathura
@@ -153,6 +154,8 @@ zathura-cb
 zathura-pdf-mupdf
 qutebrowser
 python3-adblock
+chromium
+chromium-widevine
 qbittorrent
 obs
 obs-plugin-browser-bin
@@ -161,10 +164,16 @@ cutter
 "
 apps=$(clean "$apps")
 
+# Gaming
+gaming="
+gamemode
+gamescope
+"
+gaming=$(clean "$gaming")
+
 # Personal
 personal="
 nextdns
-firefox
 "
 personal=$(clean "$personal")
 
@@ -281,7 +290,7 @@ cd void-mklive/
     -- -k "us" -T "Void Linux" -o ../build/performance-xorg-prime.iso \
     -p "void-repo-nonfree" \
     -p "$drivers $services $utilities $development" \
-    -p "$xorg $audio $bluetooth $fonts $apps" \
+    -p "$xorg $audio $bluetooth $fonts $apps $gaming" \
     -e /bin/bash \
     -I ../headless -I ../xorg -I ../perf -I ../gaming \
     -S "dhcpcd cronie tlp iwd bluetoothd dbus polkitd" \

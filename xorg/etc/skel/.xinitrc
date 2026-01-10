@@ -11,12 +11,11 @@
 # xautolock -time 60 -locker slock &
 
 # Wallpaper
-xwallpaper --maximize ~/image/light.png
-# xwallpaper --maximize ~/image/dark.png
+# Edit ~/.config/dk/sxhkdrc if you really need that anime girl wallpaper.
+# xwallpaper --maximize ~/image/anime.png
 
 # Mouse
 # xinput set-prop "Logitech M570" "libinput Accel Speed" 0
-
 
 # Keyboard
 setxkbmap us # Set Xorg keyboard language

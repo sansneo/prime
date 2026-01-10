@@ -42,13 +42,13 @@ logfile="$HOME/.dklog"
 	dkcmd set mouse mod=super move=button1 resize=button3
 
 	# focus on mouse enter
-	dkcmd focus_mouse=false
+	dkcmd set focus_mouse=false
 
 	# rules
-	# dkcmd rule class="^alacritty$" ws=1 focus=true terminal=true
-	# dkcmd rule class="^qutebrowser$" ws=2 focus=true
-	# dkcmd rule class="^code$" ws=3 focus=false
-	# dkcmd rule class="^obs$" ws=4 focus=false
+	dkcmd rule class="^alacritty$" ws=1 terminal=true focus=true
+	dkcmd rule class="^qutebrowser$" ws=2 focus=true
+	dkcmd rule class="^obs$" ws=3 focus=true
+	# dkcmd rule class="^code$" ws=4 focus=false
 
 	# apply current rules
 	dkcmd rule apply '*'
@@ -56,7 +56,6 @@ logfile="$HOME/.dklog"
 } >> "$logfile" 2>&1
 
 # Startup
-# alacritty &
-# qutebrowser &
-# obs &
-# code &
+alacritty &
+qutebrowser &
+obs &

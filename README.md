@@ -23,12 +23,12 @@ There are four builds available, all of which are based on the latest Void Linux
 * Headless (`headless-prime.iso`), the toolset plus the drivers, almost nothing else.
 * Xorg (`xorg-prime.iso`), everything headless has plus audio, bluetooth,  
 fonts, graphics and various applications.
-* Gaming (`gaming-prime-iso`), same as xorg, but using insecure kernel boot  
-options (for a performance increase up to 20%) and shipped with Heroic and various game console emulators!
-* Personal (`personal-prime.iso`), same as xorg plus highly opinionated additions such as VSCode.
+* Gaming (`gaming-prime-iso`), same as xorg, but with insecure kernel boot  
+options (for a performance increase up to 20%), Heroic and various emulators.
+* Personal (`personal-prime.iso`), same as xorg plus highly opinionated additions such as NextDNS and VSCode.
 
 > [!CAUTION]
-> Your system will be vulnerable to Meltdown and a lot more if you choose to use insecure boot options, but unless someone is on your computer doing binary exploitation and process hacking,
+> Your system will be vulnerable to Meltdown and a lot more if you choose to use insecure boot options, but unless someone is on your computer having fun binary exploitation and process hacking,
 you are probably good.
 
 Let's get into it!
@@ -92,7 +92,7 @@ Pure driver packages are not listed, but are installed as part of the system and
 * dhcpcd: dhcp client
 * iw and iwd: wifi
 * iptables and ip6tables: firewall
-* tlp and tlp-rdw: power management
+* tlp: power management
 * docker, docker-buildx and docker-compose: containers
 
 ### Languages
@@ -152,12 +152,13 @@ Packages that are not part of the toolset, but are included in headless.
 * xwallpaper: set wallpaper
 * ranger: file manager
 * nsxiv: view images
-* mpv: play audios and videos
+* kew: listen to music
+* mpv: play videos
 * ffmpeg: manipulate audios and videos
 * zathura (supporting pdf, epub, xps, cbz, cbr, cb7 and cbt): read documents
 
 ### Apps
-* qutebrowser: browser
+* chromium and qutebrowser: browse the web
 * obs: record and live stream
 * qbittorrent: torrent
 * cutter: rizin frontend
@@ -201,11 +202,10 @@ Don't use fucking AI[^5] whenever you can't understand something.
 ## Screenshots
 ![Concept](./design/light.png)
 ![Alacritty, Tmux and Helix](./design/terminal.png)
+![Gaming](./design/games.png)
 
 Is it supposed to look this pretty?   
 That's not the point, but I'm happy it does!
-
-Learn how to use [Prime](./TUTORIAL.md)
 
 ## Installation
 1. Boot it up and run `sudo void-installer`, follow the process and done 🎉!  
@@ -213,6 +213,7 @@ You know how to partition and where to mount stuff, you are a big boy/girl.
 
 > [!TIP]
 > Make sure to pick the services and groups you want!
+> Enable both iwd and wpa_supplicant if you need Wi-Fi!
 
 2. Now log into your new system and get the remaining drivers.
 
@@ -241,9 +242,8 @@ vpm install intel-video-accel intel-media-driver
 3. Lastly, make sure your `~/.xinitrc` is just the way you want it!
 
 ### Tips
-I recommend giving a shot to [Qutebrowser](SEARCH.md), but if you need to use something[^6] Chromium or Firefox based check out the [Bitwarden](https://addons.mozilla.org/en-US/firefox/addon/bitwarden-password-manager),
-[uBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin), [YouTube Unhook](https://addons.mozilla.org/en-US/firefox/addon/youtube-recommended-videos) and
-[No More Gemini](https://addons.mozilla.org/en-US/firefox/addon/no-more-gemini) extensions!
+I recommend giving a shot to Qutebrowser, but Chromium is also installed, check out [uBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin) and
+[YouTube Unhook](https://addons.mozilla.org/en-US/firefox/addon/youtube-recommended-videos) if you use that!
 
 Don't forget to install your `~/.gitconfig` and `~/.ssh` keys!
 ```ini
@@ -265,6 +265,8 @@ Edit `/etc/dhcpcd.conf` to specify your preferred DNS servers (by default, Cloud
 To prevent dhcpcd from overwriting your `/etc/resolv.conf`, uncomment `nohook resolv.conf`.  
 To use your gateway's default DNS server, comment `nooption domain_name_servers` and `nooption rdnss`.
 
+I highly recommend NextDNS or BlockyDNS as network-wide adblockers.
+
 Remove the default Helix themes to keep exlusively my selection.
 ```sh
 sudo rm -r /usr/lib/helix/runtime/themes
@@ -278,6 +280,9 @@ go install golang.org/x/tools/cmd/goimports@latest
 You can run the `kubectl`, `aws-cli` and `terraform` as Docker containers.  
 This requires the containerd and docker services to be running.
 
+Additionally:
+* [Searching on Qutebrowser](./SEARCH.md)
+
 ### Gaming
 The homonymous build comes with these installed:
 * heroic : play native and windows (with proton) games
@@ -288,22 +293,9 @@ The homonymous build comes with these installed:
 * ryujinx: play nintendo switch games through an emulator
 
 > [!NOTE]
-> I don't really play anymore, but it's super cool that almost every game runs flawlessly with no setup required on Linux now!  
+> I don't really play games anymore, but it's super cool that almost every game runs flawlessly with no setup required on Linux now!  
 > One limitation is (usually competitive) multiplayer games with kernel level anti-cheats.  
 > Heroic can install pirated[^7] games by first running Warez scene installers.
-
-## Download
-* [Headless](https://drive.google.com/file/d/1wf2pOU8T3UnSwqrMpZjrufrQXYzo4S0O) `2.1GB`  `sha256:3b831c9064617b8aa9a49b1341b1fa77d694448975a79f7ef4fe834c5d2b30fd`
-* [Safe](https://drive.google.com/file/d/14P3DwqPm8DbRmtY7zwEW9gIRMRjv6I-x) `2.9GB` `sha256:173e554562ab76de6726337e17c58f6e3bb80bfd46aff13ad6beeb9dde0a5885`
-* [Perf](https://drive.google.com/file/d/1KO9Jgmd73rqCecM1gbNqpE3Qswzf6Ye1) `2.9GB` `sha256:60953c2a35c1482781a74e8d4befe2f43ef716614821641e0c91ca86602abcef`
-
-Headless's installation size is `6GB`, for the other builds it's `9GB`.  
-These are measured without graphical drivers, as sizes can vary.
-
-Prime uses `~200MB` of memory on idle (`~600MB` with a xorg server running)!
-
-This build is from `commit:hash`.  
-Would be nice to have CI/CD, but that costs money.
 
 ## Building
 > [!WARNING]
@@ -358,17 +350,18 @@ compromise on functionality and focusing on the toolset alone, it's really not t
 [^2]: This is the real enemy we face as developers, we need to reduce overhead and that mental fatigue that slowly builds while we work!
   Here's a video from [The Primeagen](https://www.youtube.com/watch?v=ZH3iKbEiks0) I really liked which touches on the topic.
 
-[^3]: The performance build is not trying to be crazy secure, the safe build has the Void Linux kernel hardening, if you use a modern CPU on a
-  non-core/libre (meaning modern basically) system, if you are holding a non-rooted phone with Google services running on it (meaning you are a normal person),
+[^3]: If you use a modern CPU on a non-core/libre (meaning modern basically) system,
+  if you are holding a non-rooted phone with Google services running on it (meaning you are a normal person),
   if you often use something like Discord (eww) or play video games like Valorant (maybe try something single-player or fun with friends) or Rainbow Six Siege that have a
-  kernel-level anti-cheat running, your super secure private hacker ideological setup starts to look cringey. This system is secure and practical in all the right ways in my opinion.
+  kernel-level anti-cheat running, your super secure private hacker ideological setup starts to look cringey.
+  Prime is secure and practical in all the right ways IMO.
 
-[^4]: You can't use prime unless you bench at least 60kg and are really hot.
+[^4]: You can't use Prime unless you bench at least 60kg and are really hot.
 
 [^5]: Come on, really? Up until AIs can write a complete authentication API that's not vulnerable to BOLA, CSRF or anything else in the API OWASP TOP-10
 I will use it very rarely and ask questions I know are common knowledge, it does not work for anything really niche and overly specific, at least for now.
 
-[^6]: The GTK default file picker thing is so fucking bad, just live with it.
+[^6]: The GTK default file picker thing is so fucking bad, just live with it if you must.
 
 [^7]: In a world where so many companies do not care about quality of product as compared to the monetary game, you need to use like 7 different
   subscription based streaming platforms to watch a whole show and AAA game studios often shit out low effort games at full price, I believe it's totally fair to pirate things.
