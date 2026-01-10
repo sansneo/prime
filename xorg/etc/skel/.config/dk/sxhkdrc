@@ -51,7 +51,10 @@ super + ctrl + {h,l,j,k}
 
 # toggle fullscreen
 super + {_,shift} + Tab
-	dkcmd win full
+	ws=$(timeout 0.1s dkcmd status type=ws | jq -r '.workspaces[] | select(.focused == true) | .number') && \
+	if [ -n "$ws" ] && [ "$ws" -eq 4 ]; then \
+		dkcmd win full ;\
+	fi
 
 # toggle borders
 super + {less,greater}

@@ -31,8 +31,6 @@ options (for a performance increase up to 20%), Heroic and various emulators.
 > Your system will be vulnerable to Meltdown and a lot more if you choose to use insecure boot options, but unless someone is on your computer having fun with process hacking,
 you are probably good.
 
-Let's get into it!
-
 ## Headless
 Packages are (mostly) organized by the following priority order:  
 `Kernel > Shell > Userland (non‑network) > Userland (network) > Daemons` and  
